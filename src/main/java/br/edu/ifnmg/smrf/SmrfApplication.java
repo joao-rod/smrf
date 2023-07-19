@@ -8,7 +8,6 @@ public class SmrfApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SmrfApplication.class, args);
-		System.out.println("Hello, World!!");
 	}
 
 }
