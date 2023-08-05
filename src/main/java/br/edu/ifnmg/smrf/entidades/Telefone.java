@@ -1,0 +1,49 @@
+package br.edu.ifnmg.smrf.entidades;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "telefones")
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode
+public class Telefone {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column
+    private Integer ddd;
+
+    @Column(length = 12)
+    private String numero;
+
+    @ManyToOne(targetEntity = Pessoa.class)
+    @JoinColumn(name = "pessoa_id")
+    private Pessoa pessoaId;
+
+    public Telefone(Integer ddd, String numero) {
+        this.id = 0L;
+        this.ddd = ddd;
+        this.numero = numero;
+        this.pessoaId = null;
+    }
+
+    @Override
+    public String toString() {
+        return "Telefone [ddd=" + ddd + ", numero=" + numero + "]";
+    }
+ 
+}
