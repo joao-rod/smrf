@@ -12,17 +12,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
 
 @Entity
@@ -47,12 +36,13 @@ public class Pessoa extends BaseEntity {
     private String endereco;
 
 
-    @Column(name = "email")
     @OneToMany(mappedBy = "pessoaId", cascade = CascadeType.ALL)
+    @Column(name = "email")
     private List<Email> emails;
 
-    @Column(name = "telefone")
+    
     @OneToMany(mappedBy = "pessoaId", cascade = CascadeType.ALL)
+    @Column(name = "telefone")
     private List<Telefone> telefones;
 
     public Pessoa() {
