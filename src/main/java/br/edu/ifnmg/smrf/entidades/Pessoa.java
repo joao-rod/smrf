@@ -1,9 +1,24 @@
 package br.edu.ifnmg.smrf.entidades;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
@@ -32,13 +47,13 @@ public class Pessoa extends BaseEntity {
     private String endereco;
 
 
-    // @Column(name = "email")
-    // @OneToMany(mappedBy = "pessoaId", cascade = CascadeType.ALL)
-    // private Email email;
+    @Column(name = "email")
+    @OneToMany(mappedBy = "pessoaId", cascade = CascadeType.ALL)
+    private List<Email> emails;
 
-    // @Column(name = "telefone")
-    // @OneToMany(mappedBy = "pessoaId", cascade = CascadeType.ALL)
-    // private Telefone telefone;
+    @Column(name = "telefone")
+    @OneToMany(mappedBy = "pessoaId", cascade = CascadeType.ALL)
+    private List<Telefone> telefones;
 
     public Pessoa() {
     }
