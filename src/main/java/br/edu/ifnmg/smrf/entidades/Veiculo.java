@@ -22,7 +22,7 @@ public class Veiculo extends BaseEntity {
     private String modelo;
 
     @Column
-    private String ano;
+    private int ano;
 
 
 }

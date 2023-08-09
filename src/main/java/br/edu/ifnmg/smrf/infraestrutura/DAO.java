@@ -8,7 +8,7 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 import jakarta.transaction.Transactional;
 
-public class DAO<T> implements Repositorio<T> {
+public abstract class DAO<T> implements Repositorio<T> {
     
     @PersistenceContext
     private EntityManager manager;
@@ -58,6 +58,9 @@ public class DAO<T> implements Repositorio<T> {
             return false;
         }
     }
+
+    public abstract List<T> buscar(T filtro);
+
     // @Override
     // public List<T> buscar(String nome) {
     //     Query consulta = manager
