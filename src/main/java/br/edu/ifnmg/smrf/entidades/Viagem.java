@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="viagem")
+@Table(name="viagens")
 @AllArgsConstructor @NoArgsConstructor @EqualsAndHashCode(callSuper = true)
 public class Viagem extends BaseEntity {
 

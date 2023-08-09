@@ -8,7 +8,10 @@ import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -33,8 +36,9 @@ public class Pessoa extends BaseEntity {
     @Column
     private String rg;
 
-    @Column
-    private String endereco;
+    @ManyToOne(targetEntity = Endereco.class)
+    @JoinColumn(name="endereco_id")
+    private Endereco endereco;
 
     @OneToMany(mappedBy = "pessoaId", cascade = CascadeType.ALL)
     @Column(name = "email")
