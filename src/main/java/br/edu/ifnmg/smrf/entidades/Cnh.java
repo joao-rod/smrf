@@ -26,4 +26,9 @@ public class Cnh extends BaseEntity {
     @Column(name = "data_validade")
     private Date dataValidade;
 
+    @Override
+    public String toString() {
+        return "Cnh [categoria=" + categoria + "]";
+    }
+
 }
