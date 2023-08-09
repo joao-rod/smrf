@@ -2,9 +2,6 @@ package br.edu.ifnmg.smrf.entidades;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -17,12 +14,8 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "telefones")
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode
-public class Telefone {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode(callSuper = true)
+public class Telefone extends BaseEntity {
 
     @Column
     private Integer ddd;
@@ -35,7 +28,7 @@ public class Telefone {
     private Pessoa pessoaId;
 
     public Telefone(Integer ddd, String numero) {
-        this.id = 0L;
+        this.setId(0L);
         this.ddd = ddd;
         this.numero = numero;
         this.pessoaId = null;

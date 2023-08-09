@@ -5,14 +5,15 @@ import java.util.Date;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name="viagem")
-public class Viagem extends BaseEntity{
-    @Id
-    private long id;
+@AllArgsConstructor @NoArgsConstructor @EqualsAndHashCode(callSuper = true)
+public class Viagem extends BaseEntity {
 
     @Column
     private long condutor;
@@ -23,14 +24,6 @@ public class Viagem extends BaseEntity{
     @Column
     @Enumerated
     private ViagemStatus status;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public long getCondutor() {
         return condutor;
@@ -49,32 +42,8 @@ public class Viagem extends BaseEntity{
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + (int) (id ^ (id >>> 32));
-        return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Viagem other = (Viagem) obj;
-        if (id != other.id)
-            return false;
-        return true;
-    }
-
-    @Override
     public String toString() {
         return "Viagem [condutor=" + condutor + "]";
     }
-
-    
 
 }
