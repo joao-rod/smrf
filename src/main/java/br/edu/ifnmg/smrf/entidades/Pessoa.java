@@ -5,6 +5,7 @@ import java.util.List;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorColumn;
+import jakarta.persistence.DiscriminatorType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
@@ -23,7 +24,7 @@ import lombok.Setter;
 @Entity
 @Table(name="pessoas")
 @Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name = "usuario")
+@DiscriminatorColumn(name = "usuario", discriminatorType = DiscriminatorType.INTEGER)
 @Getter @Setter @AllArgsConstructor @NoArgsConstructor @EqualsAndHashCode(callSuper = true)
 public class Pessoa extends BaseEntity {
 
@@ -35,6 +36,9 @@ public class Pessoa extends BaseEntity {
 
     @Column
     private String rg;
+
+    @Column
+    private Usuario usuario;
 
     @ManyToOne(targetEntity = Endereco.class)
     @JoinColumn(name="endereco_id")
