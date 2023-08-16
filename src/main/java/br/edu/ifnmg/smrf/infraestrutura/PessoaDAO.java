@@ -6,9 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import br.edu.ifnmg.smrf.entidades.Pessoa;
-import br.edu.ifnmg.smrf.entidades.Veiculo;
 import br.edu.ifnmg.smrf.servicos.PessoaRepositorio;
-import br.edu.ifnmg.smrf.servicos.VeiculoRepositorio;
 import jakarta.persistence.Query;
 
 @Service

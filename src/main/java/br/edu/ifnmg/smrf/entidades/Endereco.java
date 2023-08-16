@@ -31,6 +31,6 @@ public class Endereco extends BaseEntity {
 
     @ManyToOne(targetEntity = Pessoa.class)
     @JoinColumn(name = "pessoa_id")
-    private Pessoa pessoaId;
+    private Pessoa pessoa;
 
 }

@@ -19,9 +19,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @MappedSuperclass
-@EntityListeners(AuditingEntityListener.class)
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode
+//@EntityListeners(AuditingEntityListener.class)
+@Getter @Setter @AllArgsConstructor @EqualsAndHashCode
 public abstract class BaseEntity {
+     
+
+    BaseEntity() {
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

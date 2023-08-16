@@ -25,14 +25,7 @@ public class Telefone extends BaseEntity {
 
     @ManyToOne(targetEntity = Pessoa.class)
     @JoinColumn(name = "pessoa_id")
-    private Pessoa pessoaId;
-
-    public Telefone(Integer ddd, String numero) {
-        this.setId(0L);
-        this.ddd = ddd;
-        this.numero = numero;
-        this.pessoaId = null;
-    }
+    private Pessoa pessoa;
 
     @Override
     public String toString() {

@@ -4,13 +4,7 @@ import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
-import jakarta.persistence.DiscriminatorColumn;
-import jakarta.persistence.DiscriminatorType;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -23,8 +17,6 @@ import lombok.Setter;
 
 @Entity
 @Table(name="pessoas")
-@Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name = "usuario", discriminatorType = DiscriminatorType.INTEGER)
 @Getter @Setter @AllArgsConstructor @NoArgsConstructor @EqualsAndHashCode(callSuper = true)
 public class Pessoa extends BaseEntity {
 
@@ -37,23 +29,21 @@ public class Pessoa extends BaseEntity {
     @Column
     private String rg;
 
-    @Column
-    private Usuario usuario;
+    @OneToOne
+    private Pessoa pessoa;
 
-    @ManyToOne(targetEntity = Endereco.class)
-    @JoinColumn(name="endereco_id")
-    private Endereco endereco;
+    @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, targetEntity = Endereco.class)
+    private List<Endereco> enderecos;
 
-    @OneToMany(mappedBy = "pessoaId", cascade = CascadeType.ALL)
-    @Column(name = "email")
+    @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, targetEntity = Email.class)
     private List<Email> emails;
     
-    @OneToMany(mappedBy = "pessoaId", cascade = CascadeType.ALL)
-    @Column(name = "telefone")
+    @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, targetEntity = Telefone.class)
     private List<Telefone> telefones;
 
     @Override
     public String toString() {
         return "Pessoa [nome=" + nome + "]";
     }
+
 }

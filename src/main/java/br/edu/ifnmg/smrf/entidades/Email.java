@@ -22,14 +22,8 @@ public class Email extends BaseEntity {
 
     @ManyToOne(targetEntity = Pessoa.class)
     @JoinColumn(name = "pessoa_id")
-    private Pessoa pessoaId;
-
-    public Email(String addr) {
-        this.setId(0L);
-        this.addr = addr;
-        this.pessoaId = null;
-    }
-
+    private Pessoa pessoa;
+    
     @Override
     public String toString() {
         return "Email [email=" + addr + "]";

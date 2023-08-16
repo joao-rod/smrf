@@ -43,6 +43,7 @@ public abstract class DAO<T> implements Repositorio<T> {
             manager.flush();
             return true;
         }catch(Exception ex){
+            System.out.println(ex.getMessage());
             return false;
         }
     }

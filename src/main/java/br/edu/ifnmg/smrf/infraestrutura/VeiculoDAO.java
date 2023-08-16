@@ -3,10 +3,13 @@ package br.edu.ifnmg.smrf.infraestrutura;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import br.edu.ifnmg.smrf.entidades.Veiculo;
 import br.edu.ifnmg.smrf.servicos.VeiculoRepositorio;
 import jakarta.persistence.Query;
 
+@Service
 public class VeiculoDAO extends DAO<Veiculo> implements VeiculoRepositorio {
 
 
