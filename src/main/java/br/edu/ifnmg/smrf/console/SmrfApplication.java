@@ -12,9 +12,9 @@ import br.edu.ifnmg.smrf.entidades.Veiculo;
 import br.edu.ifnmg.smrf.servicos.PessoaRepositorio;
 import br.edu.ifnmg.smrf.servicos.VeiculoRepositorio;
 
-@EntityScan("br.edu.ifnmg.smrf")
-@ComponentScan("br.edu.ifnmg.smrf")
-@SpringBootApplication
+// @EntityScan("br.edu.ifnmg.smrf")
+// @ComponentScan("br.edu.ifnmg.smrf")
+// @SpringBootApplication
 public class SmrfApplication implements CommandLineRunner{
   @Autowired
   VeiculoRepositorio veiculos;

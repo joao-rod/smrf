@@ -24,4 +24,6 @@ public class Condutor extends BaseEntity {
     @JoinColumn(name = "cnh")
     private Cnh cnh;
 
+    @OneToOne
+    private Pessoa condutor;
 }
