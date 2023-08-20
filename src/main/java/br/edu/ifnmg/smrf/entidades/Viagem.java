@@ -20,10 +20,6 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 public class Viagem extends BaseEntity {
 
-    public void setStatus(ViagemStatus status) {
-        this.status = status;
-    }
-
     @OneToMany
     private List<Condutor> condutores;
 
@@ -65,6 +61,10 @@ public class Viagem extends BaseEntity {
 
     public ViagemStatus getStatus() {
         return status;
+    }
+
+    public void setStatus(ViagemStatus status) {
+        this.status = status;
     }
 
     @Override
