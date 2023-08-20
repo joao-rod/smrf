@@ -14,7 +14,11 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "telefones")
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode(callSuper = true)
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 public class Telefone extends BaseEntity {
 
     @Column
@@ -31,5 +35,5 @@ public class Telefone extends BaseEntity {
     public String toString() {
         return "Telefone [ddd=" + ddd + ", numero=" + numero + "]";
     }
- 
+
 }

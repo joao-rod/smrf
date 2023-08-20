@@ -11,19 +11,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 @Entity
-@Table(name="enderecos")
-@Getter @Setter @AllArgsConstructor @NoArgsConstructor @EqualsAndHashCode(callSuper = true)
+@Table(name = "enderecos")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 public class Endereco extends BaseEntity {
-    
+
     @Column
     private String logradouro;
 
-    @Column 
+    @Column
     private String numero;
 
-    @Column 
+    @Column
     private String bairro;
 
     @Column
@@ -33,4 +36,9 @@ public class Endereco extends BaseEntity {
     @JoinColumn(name = "pessoa_id")
     private Pessoa pessoa;
 
+    @Override
+    public String toString() {
+        return "Endereco [logradouro=" + logradouro + ", numero=" + numero + ", bairro=" + bairro + ", Complemento="
+                + Complemento + "]";
+    }
 }

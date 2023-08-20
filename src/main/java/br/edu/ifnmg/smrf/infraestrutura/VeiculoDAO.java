@@ -12,7 +12,6 @@ import jakarta.persistence.Query;
 @Service
 public class VeiculoDAO extends DAO<Veiculo> implements VeiculoRepositorio {
 
-
     public VeiculoDAO(){
         super(Veiculo.class);
     }

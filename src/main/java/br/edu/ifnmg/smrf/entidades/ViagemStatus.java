@@ -7,6 +7,5 @@ public enum ViagemStatus {
     NaoAprovoda,
     Cancelada,
     EmRota,
-    Finalizada,
-
+    Finalizada
 }

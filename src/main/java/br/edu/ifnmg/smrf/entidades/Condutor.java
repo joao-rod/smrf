@@ -16,14 +16,22 @@ import lombok.Setter;
 @Entity
 @Table(name = "condutores")
 @Inheritance(strategy = InheritanceType.JOINED)
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode(callSuper = true)
-
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 public class Condutor extends BaseEntity {
-    
+
     @OneToOne(targetEntity = Cnh.class)
     @JoinColumn(name = "cnh")
     private Cnh cnh;
 
     @OneToOne
     private Pessoa condutor;
+
+    @Override
+    public String toString() {
+        return "Condutor [cnh=" + cnh + "]";
+    }
 }

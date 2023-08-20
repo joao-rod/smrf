@@ -24,5 +24,8 @@ public class Veiculo extends BaseEntity {
     @Column
     private int ano;
 
-
+    @Override
+    public String toString() {
+        return "Veiculo [placa=" + placa + ", modelo=" + modelo + ", ano=" + ano + "]";
+    }
 }

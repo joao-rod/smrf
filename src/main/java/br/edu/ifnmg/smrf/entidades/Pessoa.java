@@ -16,14 +16,18 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="pessoas")
-@Getter @Setter @AllArgsConstructor @NoArgsConstructor @EqualsAndHashCode(callSuper = true)
+@Table(name = "pessoas")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 public class Pessoa extends BaseEntity {
 
-    @Column(length=100)
+    @Column(length = 100)
     private String nome;
 
-    @Column(length=11)
+    @Column(length = 11)
     private String cpf;
 
     @Column
@@ -37,7 +41,7 @@ public class Pessoa extends BaseEntity {
 
     @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, targetEntity = Email.class)
     private List<Email> emails;
-    
+
     @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, targetEntity = Telefone.class)
     private List<Telefone> telefones;
 

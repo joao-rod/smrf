@@ -10,7 +10,8 @@ import br.edu.ifnmg.smrf.servicos.PessoaRepositorio;
 import jakarta.persistence.Query;
 
 @Service
-public class PessoaDAO extends DAO<Pessoa> implements PessoaRepositorio{
+public class PessoaDAO extends DAO<Pessoa> implements PessoaRepositorio {
+    
     public PessoaDAO(){
         super(Pessoa.class);
     }

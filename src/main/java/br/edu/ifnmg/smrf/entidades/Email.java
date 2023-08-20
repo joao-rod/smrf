@@ -14,7 +14,11 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "emails")
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode(callSuper = true)
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 public class Email extends BaseEntity {
 
     @Column(name = "address", length = 100)
@@ -23,7 +27,7 @@ public class Email extends BaseEntity {
     @ManyToOne(targetEntity = Pessoa.class)
     @JoinColumn(name = "pessoa_id")
     private Pessoa pessoa;
-    
+
     @Override
     public String toString() {
         return "Email [email=" + addr + "]";

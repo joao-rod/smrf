@@ -7,7 +7,6 @@ import java.util.List;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -15,8 +14,10 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="viagens")
-@AllArgsConstructor @NoArgsConstructor @EqualsAndHashCode(callSuper = true)
+@Table(name = "viagens")
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 public class Viagem extends BaseEntity {
 
     public void setStatus(ViagemStatus status) {
@@ -25,8 +26,8 @@ public class Viagem extends BaseEntity {
 
     @OneToMany
     private List<Condutor> condutores;
-    
-    @Column 
+
+    @Column
     private Date data;
 
     @Column
@@ -41,16 +42,16 @@ public class Viagem extends BaseEntity {
         this.condutores = condutor;
     }
 
-    public void addCondutor(Condutor c){
-        if(this.condutores == null)
+    public void addCondutor(Condutor c) {
+        if (this.condutores == null)
             this.condutores = new ArrayList<>();
 
-        if(c != null)
+        if (c != null)
             this.condutores.add(c);
     }
 
-    public void removeCondutor(Condutor c){
-        if(this.condutores.contains(c))
+    public void removeCondutor(Condutor c) {
+        if (this.condutores.contains(c))
             this.condutores.remove(c);
     }
 
@@ -62,13 +63,12 @@ public class Viagem extends BaseEntity {
         this.data = data;
     }
 
-    @Override
-    public String toString() {
-        return "Viagem [condutor=" + getId() + "]";
-    }
-
     public ViagemStatus getStatus() {
         return status;
     }
 
+    @Override
+    public String toString() {
+        return "Viagem [condutor=" + getId() + "]";
+    }
 }
