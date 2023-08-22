@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="613.0" prefWidth="961.0" style="-fx-background-color: #6F6AF8;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="painelLogin" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="613.0" prefWidth="961.0" style="-fx-background-color: #6F6AF8;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifnmg.smrf.Apresentacao.Desktop.LoginController">
    <children>
       <ImageView fitHeight="450.0" fitWidth="450.0" layoutX="5.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -54,7 +54,7 @@
             </VBox>
             <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="300.0">
                <children>
-                  <Button fx:id="btnLoginEntrar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="330.0" style="-fx-background-color: #6F6AF8;" text="Entrar" textFill="WHITE">
+                  <Button fx:id="btnLoginEntrar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#autenticar" prefHeight="40.0" prefWidth="330.0" style="-fx-background-color: #6F6AF8;" text="Entrar2" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>

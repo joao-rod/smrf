@@ -23,9 +23,9 @@ public class PessoaDAO extends DAO<Pessoa> implements PessoaRepositorio {
     }
 
     @Override
-    public Pessoa abrirPorNome(String nome) {
-        Query consulta = getManager().createQuery("select t from Pessoa t where t.nome = :p1");
-        consulta.setParameter("p1", nome);
+    public Pessoa abrirPorCpf(String cpf) {
+        Query consulta = getManager().createQuery("select t from Pessoa t where t.cpf = :p1");
+        consulta.setParameter("p1", cpf);
         return (Pessoa)consulta.getSingleResult();
     }
 

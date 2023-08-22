@@ -19,6 +19,9 @@ import lombok.Setter;
 public class Usuario extends BaseEntity {
 
     @Column(nullable = false)
+    private String email;
+
+    @Column(nullable = false)
     private String senha;
 
     @Column(nullable = false)
