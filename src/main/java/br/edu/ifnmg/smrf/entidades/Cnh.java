@@ -4,6 +4,7 @@ import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -25,6 +26,9 @@ public class Cnh extends BaseEntity {
 
     @Column(name = "data_validade")
     private Date dataValidade;
+
+    @OneToOne
+    private Condutor condutor;
 
     @Override
     public String toString() {
