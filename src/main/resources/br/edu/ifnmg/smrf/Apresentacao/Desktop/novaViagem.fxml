@@ -8,6 +8,7 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -155,7 +156,6 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="inpRuUsuario11" layoutX="456.0" layoutY="248.0" prefHeight="26.0" prefWidth="263.0" />
                   <TextField fx:id="inpRuUsuario2" layoutX="96.0" layoutY="644.0" prefHeight="26.0" prefWidth="450.0" />
                   <Label layoutX="96.0" layoutY="624.0" text="Rua">
                      <font>
@@ -194,6 +194,7 @@
                         <Insets left="15.0" />
                      </padding>
                   </Label>
+                  <Spinner layoutX="456.0" layoutY="248.0" prefHeight="26.0" prefWidth="263.0" />
                </children>
             </AnchorPane>
          </content>
