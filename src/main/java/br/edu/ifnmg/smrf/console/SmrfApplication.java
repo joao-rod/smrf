@@ -7,8 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-import br.edu.ifnmg.smrf.entidades.Veiculo;
 
+import br.edu.ifnmg.smrf.entidades.Pessoa;
+import br.edu.ifnmg.smrf.entidades.Veiculo;
+import br.edu.ifnmg.smrf.servicos.PessoaRepositorio;
 import br.edu.ifnmg.smrf.servicos.VeiculoRepositorio;
 
 // @EntityScan("br.edu.ifnmg.smrf")
@@ -17,8 +19,11 @@ import br.edu.ifnmg.smrf.servicos.VeiculoRepositorio;
 // @EnableJpaAuditing
 public class SmrfApplication implements CommandLineRunner {
     
+    // @Autowired
+    // VeiculoRepositorio veiculos;
+
     @Autowired
-    VeiculoRepositorio veiculos;
+    PessoaRepositorio pessoas;
 
     public static void main(String[] args) {
         SpringApplication.run(SmrfApplication.class, args);
@@ -35,5 +40,15 @@ public class SmrfApplication implements CommandLineRunner {
         // vEdit.setPlaca("xandao");
 
         // veiculos.Salvar(vEdit);
+
+        Pessoa v = new Pessoa();
+        v.setNome("joao");
+
+        pessoas.Salvar(v);
+
+        // Pessoa vEdit = pessoas.abrirPorNome("joao");
+        // vEdit.setNome("xandao");
+
+        // pessoas.Salvar(vEdit);
     }
 }

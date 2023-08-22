@@ -33,8 +33,6 @@ public class Pessoa extends BaseEntity {
     @Column
     private String rg;
 
-    @OneToOne
-    private Pessoa pessoa;
 
     @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, targetEntity = Endereco.class)
     private List<Endereco> enderecos;
