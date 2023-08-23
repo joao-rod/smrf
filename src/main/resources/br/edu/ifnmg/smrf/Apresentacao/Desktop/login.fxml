@@ -54,7 +54,7 @@
             </VBox>
             <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="300.0">
                <children>
-                  <Button fx:id="btnLoginEntrar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#autenticar" prefHeight="40.0" prefWidth="330.0" style="-fx-background-color: #6F6AF8;" text="Entrar2" textFill="WHITE">
+                  <Button fx:id="btnLoginEntrar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#autenticar" prefHeight="40.0" prefWidth="330.0" style="-fx-background-color: #6F6AF8;" text="Entrar" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -64,7 +64,7 @@
                   </Button>
                </children>
             </HBox>
-            <Hyperlink fx:id="lblCriarConta" contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" text="Não tem uma conta? Crie uma aqui." underline="true" visited="true" />
+            <Hyperlink fx:id="linkCriarConta" contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" onAction="#irParaNovoUsuario" text="Não tem uma conta? Crie uma aqui." underline="true" visited="true" />
          </children>
          <padding>
             <Insets left="90.0" right="90.0" />

@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import javafx.application.Application;
 
 @EntityScan("br.edu.ifnmg.smrf")
-@ComponentScan({"br.edu.ifnmg.smrf","net.rgielen.fxweaver"})
+@ComponentScan({"br.edu.ifnmg.smrf", "net.rgielen.fxweaver"})
 @SpringBootApplication
 @EnableJpaAuditing
 public class AplicacaoSpring {
