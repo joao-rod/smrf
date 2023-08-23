@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import br.edu.ifnmg.smrf.entidades.Usuario;
 import br.edu.ifnmg.smrf.servicos.AutenticacaoServico;
 import br.edu.ifnmg.smrf.servicos.UsuarioRepositorio;
+import jakarta.persistence.NoResultException;
 
 @Service
 @Scope("singleton")
@@ -22,15 +23,14 @@ public class AutenticacaoServicoImp implements AutenticacaoServico {
 
     @Override
     public boolean autenticar(String email, String senha) {
-        usuario = repositorio.abrirPorEmail(email);
-        if(usuario != null){
-            if(usuario.getSenha().equals(senha)){
-                return true;
-            } else {
-                usuario = null;
-            }
+        try {
+            usuario = repositorio.abrirPorEmail(email);
+
+            return usuario != null && usuario.getSenha().equals(senha);
+
+        } catch (NoResultException e) {
+            return false;
         }
-        return false;
     }
 
     @Override
