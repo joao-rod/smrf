@@ -5,7 +5,7 @@ import java.util.List;
 import br.edu.ifnmg.smrf.servicos.Repositorio;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.Query;
+
 import jakarta.transaction.Transactional;
 
 public abstract class DAO<T> implements Repositorio<T> {
@@ -61,20 +61,5 @@ public abstract class DAO<T> implements Repositorio<T> {
     }
 
     public abstract List<T> buscar(T filtro);
-
-    // @Override
-    // public List<T> buscar(String nome) {
-    //     Query consulta = manager
-    //             .createQuery("select t from T t where nome = :p0");
-    //     return consulta
-    //             .setParameter("p0", nome)
-    //             .getResultList();
-    // }
-    // @Override
-    // public List<T> Buscar() {
-    //     Query consulta = manager.createQuery("select t from T t");
-
-    //     return consulta.getResultList();
-    // }
 
 }
