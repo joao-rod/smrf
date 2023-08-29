@@ -39,7 +39,7 @@ public class Pessoa extends BaseEntity {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private TipoUsuario tipoPessoa;
+    private TipoPessoa tipoPessoa;
 
     @Column
     private String rg;
