@@ -1,74 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="painelLogin" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="613.0" prefWidth="961.0" style="-fx-background-color: #6F6AF8;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifnmg.smrf.Apresentacao.Desktop.LoginController">
+<StackPane fx:controller="br.edu.ifnmg.smrf.Apresentacao.Desktop.LoginController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="450.0" fitWidth="450.0" layoutX="5.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/SMRF.png" />
-         </image>
-      </ImageView>
-      <VBox alignment="TOP_CENTER" layoutX="655.0" layoutY="6.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="461.0" prefWidth="500.0" spacing="5.0" style="-fx-background-color: FFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <VBox alignment="CENTER" prefHeight="201.0" prefWidth="300.0">
+            <AnchorPane layoutX="5.0" layoutY="2.0" prefHeight="400.0" prefWidth="306.0" styleClass="left-form" stylesheets="@lib/web/loginDesign.css">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                  <ImageView fitHeight="400.0" fitWidth="324.0" layoutX="-24.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/avatar.png" />
+                        <Image url="@images/SMRF.png" />
                      </image>
                   </ImageView>
                </children>
-            </VBox>
-            <VBox prefHeight="70.0" prefWidth="100.0" spacing="3.0">
+            </AnchorPane>
+            <AnchorPane fx:id="viewLogin" layoutX="312.0" layoutY="3.0" prefHeight="400.0" prefWidth="300.0" styleClass="right-form" stylesheets="@lib/web/loginDesign.css">
                <children>
-                  <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="20.0" text="E-mail" textFill="#404040">
+                  <Label layoutX="81.0" layoutY="57.0" stylesheets="@lib/web/loginDesign.css" text="Bem Vindo!" textFill="#256b51">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Tahoma Bold" size="24.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="inpLoginEmail" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" prefWidth="216.0" />
-               </children>
-            </VBox>
-            <VBox prefHeight="90.0" prefWidth="100.0">
-               <children>
-                  <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="20.0" text="Senha" textFill="#404040">
+                  <TextField fx:id="inpLoginEmail" layoutX="40.0" layoutY="153.0" prefHeight="30.0" prefWidth="220.0" promptText="Matrícula" styleClass="textfield" stylesheets="@lib/web/loginDesign.css" />
+                  <Label layoutX="48.0" layoutY="126.0" text="Login:" textFill="#256b51">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Tahoma Bold" size="14.0" />
                      </font>
                   </Label>
-                  <PasswordField fx:id="inpLoginSenha" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" prefWidth="216.0" />
-               </children>
-            </VBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="300.0">
-               <children>
-                  <Button fx:id="btnLoginEntrar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#autenticar" prefHeight="40.0" prefWidth="330.0" style="-fx-background-color: #6F6AF8;" text="Entrar2" textFill="WHITE">
+                  <PasswordField fx:id="inpLoginSenha" layoutX="39.0" layoutY="225.0" prefHeight="30.0" prefWidth="220.0" promptText="Sua senha de 6 dígitos" styleClass="textfield" stylesheets="@lib/web/loginDesign.css" />
+                  <Label layoutX="44.0" layoutY="200.0" text="Senha: " textFill="#256b51">
                      <font>
-                        <Font size="18.0" />
+                        <Font name="Tahoma Bold" size="14.0" />
                      </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
+                  </Label>
+                  <Button fx:id="loginBtn" layoutX="39.0" layoutY="327.0" mnemonicParsing="false" onAction="#autenticar" prefHeight="40.0" prefWidth="220.0" styleClass="login-btn" stylesheets="@lib/web/loginDesign.css" text="Entrar">
+                     <font>
+                        <Font name="Tahoma Bold" size="18.0" />
+                     </font>
                   </Button>
+                  <Button fx:id="close" layoutX="249.0" layoutY="1.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="44.0" />
+                  <FontAwesomeIcon glyphName="CLOSE" layoutX="265.0" layoutY="18.0" size="1.3em" />
                </children>
-            </HBox>
-            <Hyperlink fx:id="lblCriarConta" contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" text="Não tem uma conta? Crie uma aqui." underline="true" visited="true" />
+            </AnchorPane>
          </children>
-         <padding>
-            <Insets left="90.0" right="90.0" />
-         </padding>
-      </VBox>
+      </AnchorPane>
    </children>
-</AnchorPane>
+</StackPane>
