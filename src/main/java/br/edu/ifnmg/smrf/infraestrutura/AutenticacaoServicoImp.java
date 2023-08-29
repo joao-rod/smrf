@@ -4,17 +4,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
-import br.edu.ifnmg.smrf.entidades.Usuario;
+import br.edu.ifnmg.smrf.entidades.Pessoa;
 import br.edu.ifnmg.smrf.servicos.AutenticacaoServico;
-import br.edu.ifnmg.smrf.servicos.UsuarioRepositorio;
+import br.edu.ifnmg.smrf.servicos.PessoaRepositorio;
+import jakarta.persistence.NoResultException;
 
 @Service
 @Scope("singleton")
 public class AutenticacaoServicoImp implements AutenticacaoServico {
-    private Usuario usuario;
+    private Pessoa usuario;
 
     @Autowired
-    private UsuarioRepositorio repositorio;
+    private PessoaRepositorio repositorio;
 
     public AutenticacaoServicoImp() {
         this.usuario = null;
@@ -22,19 +23,18 @@ public class AutenticacaoServicoImp implements AutenticacaoServico {
 
     @Override
     public boolean autenticar(String email, String senha) {
-        usuario = repositorio.abrirPorEmail(email);
-        if(usuario != null){
-            if(usuario.getSenha().equals(senha)){
-                return true;
-            } else {
-                usuario = null;
-            }
+        try {
+            usuario = repositorio.abrirPorEmail(email);
+
+            return usuario != null && usuario.getSenha().equals(senha);
+
+        } catch (NoResultException e) {
+            return false;
         }
-        return false;
     }
 
     @Override
-    public Usuario getUsuario() {
+    public Pessoa getUsuario() {
         return usuario;
     }
 }

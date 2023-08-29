@@ -23,6 +23,9 @@ public class Viagem extends BaseEntity {
     @OneToMany
     private List<Condutor> condutores;
 
+    @OneToMany
+    private List<Veiculo> veiculos;
+
     @Column
     private Date data;
 
@@ -50,7 +53,26 @@ public class Viagem extends BaseEntity {
         if (this.condutores.contains(c))
             this.condutores.remove(c);
     }
+    public List<Veiculo> getVeiculos() {
+        return veiculos;
+    }
 
+    public void setVeiculos(List<Veiculo> veiculo) {
+        this.veiculos = veiculo;
+    }
+
+    public void addVeiculo(Veiculo c) {
+        if (this.veiculos == null)
+            this.veiculos = new ArrayList<>();
+
+        if (c != null)
+            this.veiculos.add(c);
+    }
+
+    public void removeVeiculo(Veiculo c) {
+        if (this.veiculos.contains(c))
+            this.veiculos.remove(c);
+    }
     public Date getData() {
         return data;
     }

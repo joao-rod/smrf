@@ -4,4 +4,5 @@ import br.edu.ifnmg.smrf.entidades.Pessoa;
 
 public interface PessoaRepositorio extends Repositorio<Pessoa>{
     public Pessoa abrirPorCpf(String cpf);
+    public Pessoa abrirPorEmail(String email);
 }

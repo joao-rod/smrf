@@ -1,6 +1,6 @@
 package br.edu.ifnmg.smrf.entidades;
 
-public enum TipoUsuario {
+public enum TipoPessoa {
     Admin,
     Coordenador,
     Funcionario,

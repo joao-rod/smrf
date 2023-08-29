@@ -5,8 +5,9 @@ import java.util.List;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -30,15 +31,21 @@ public class Pessoa extends BaseEntity {
     @Column(length = 11)
     private String cpf;
 
+    @Column(nullable = false)
+    private String email;
+
+    @Column(nullable = false)
+    private String senha;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private TipoUsuario tipoPessoa;
+
     @Column
     private String rg;
 
-
     @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, targetEntity = Endereco.class)
     private List<Endereco> enderecos;
-
-    @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, targetEntity = Email.class)
-    private List<Email> emails;
 
     @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, targetEntity = Telefone.class)
     private List<Telefone> telefones;
