@@ -37,17 +37,8 @@
                         <Font name="Tahoma Bold" size="14.0" />
                      </font>
                   </Label>
-<<<<<<< HEAD
                   <PasswordField fx:id="inpLoginSenha" layoutX="39.0" layoutY="225.0" prefHeight="30.0" prefWidth="220.0" promptText="Sua senha de 6 dígitos" styleClass="textfield" stylesheets="@lib/web/loginDesign.css" />
                   <Label layoutX="44.0" layoutY="200.0" text="Senha: " textFill="#256b51">
-=======
-                  <PasswordField fx:id="inpLoginSenha" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" prefWidth="216.0" />
-               </children>
-            </VBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="300.0">
-               <children>
-                  <Button fx:id="btnLoginEntrar" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#autenticar" prefHeight="40.0" prefWidth="330.0" style="-fx-background-color: #6F6AF8;" text="Entrar" textFill="WHITE">
->>>>>>> main
                      <font>
                         <Font name="Tahoma Bold" size="14.0" />
                      </font>
@@ -60,12 +51,7 @@
                   <Button fx:id="close" layoutX="249.0" layoutY="1.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="44.0" />
                   <FontAwesomeIcon glyphName="CLOSE" layoutX="265.0" layoutY="18.0" size="1.3em" />
                </children>
-<<<<<<< HEAD
             </AnchorPane>
-=======
-            </HBox>
-            <Hyperlink fx:id="linkCriarConta" contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" onAction="#irParaNovoUsuario" text="Não tem uma conta? Crie uma aqui." underline="true" visited="true" />
->>>>>>> main
          </children>
       </AnchorPane>
    </children>

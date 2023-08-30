@@ -17,12 +17,8 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
-<<<<<<< HEAD
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-=======
-import javafx.scene.layout.BorderPane;
->>>>>>> main
 import net.rgielen.fxweaver.core.FxmlView;
 
 @Service
@@ -50,9 +46,6 @@ public class LoginController extends Controller {
     @FXML
     private StackPane menu;
 
-    @FXML
-    BorderPane painelNovoUsuario;
-
     public LoginController() {
 
     }
@@ -63,8 +56,7 @@ public class LoginController extends Controller {
         String senha = inpLoginSenha.getText();
 
         if (autenticacao.autenticar(login, senha)) {
-<<<<<<< HEAD
-            //carregarScene(menu, MenuController.class);
+            carregarScene(menu, MenuController.class);
 
             Alert alert = new Alert(AlertType.INFORMATION, "deu certo", ButtonType.OK);
              alert.showAndWait();
@@ -73,18 +65,7 @@ public class LoginController extends Controller {
 
              //carregarScene(menu, MenuController.class);
 
-=======
-            carregarScene(painelNovoUsuario, NovoUsuarioController.class);
-
-            // Alert alert = new Alert(AlertType.INFORMATION, "deu certo", ButtonType.OK);
-            // alert.showAndWait();
-
-            // logs.registrar(LogNivel.Informacao, "Login", txtLogin.getText());
-
-            // carregarScene(viewLogin, TelaPrincipalController.class);
-
->>>>>>> main
-            // alert.showAndWait();
+             alert.showAndWait();
         } else {
             // logs.registrar(LogNivel.Erro, "Login", txtLogin.getText());
             // Alert alert = new Alert(AlertType.CONFIRMATION, "Erro ao acessar o sistema.
@@ -101,15 +82,8 @@ public class LoginController extends Controller {
         }
     }
 
-<<<<<<< HEAD
     //@FXML
    // public void irParaMenu(Event e) {
     //    //carregarScene(painelNovoUsuario, NovoUsuarioController.class);
    // }
-=======
-    @FXML
-    public void irParaNovoUsuario(Event e) {
-        carregarScene(painelNovoUsuario, NovoUsuarioController.class);
-    }
->>>>>>> main
 }
