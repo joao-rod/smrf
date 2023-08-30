@@ -22,7 +22,7 @@ import javafx.scene.layout.AnchorPane;
 import net.rgielen.fxweaver.core.FxmlView;
 
 @Service
-@FxmlView("Menu.fxml")
+@FxmlView("menu.fxml")
 
 public class MenuController extends Controller {
 

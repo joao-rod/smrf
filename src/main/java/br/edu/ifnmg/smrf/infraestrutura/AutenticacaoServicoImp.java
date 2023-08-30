@@ -26,7 +26,6 @@ public class AutenticacaoServicoImp implements AutenticacaoServico {
             usuario = repositorio.abrirPorEmail(email);
 
             return usuario != null && usuario.getSenha().equals(senha);
-
         } catch (Exception e) {
             return false;
         }

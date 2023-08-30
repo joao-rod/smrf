@@ -1,13 +1,9 @@
 package br.edu.ifnmg.smrf.Apresentacao.Desktop;
 
-import javafx.fxml.Initializable;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import br.edu.ifnmg.smrf.servicos.AutenticacaoServico;
-import javafx.application.Platform;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -16,8 +12,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TitledPane;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import net.rgielen.fxweaver.core.FxmlView;
 
@@ -27,12 +21,6 @@ public class LoginController extends Controller {
 
     @Autowired
     private AutenticacaoServico autenticacao;
-
-    // @Autowired
-    // private LogServico logs;
-
-    @FXML
-    private Button close;
 
     @FXML
     private TextField inpLoginEmail;
@@ -44,17 +32,14 @@ public class LoginController extends Controller {
     private Button loginBtn;
 
     @FXML
-    private StackPane menu;
-
-    public LoginController() {
-
-    }
+    private StackPane login;
 
     @FXML
     public void autenticar(Event e) {
-        String login = inpLoginEmail.getText();
+        String username = inpLoginEmail.getText();
         String senha = inpLoginSenha.getText();
 
+<<<<<<< HEAD
         if (autenticacao.autenticar(login, senha)) {
            // carregarScene(menu, MenuController.class);
 
@@ -66,24 +51,18 @@ public class LoginController extends Controller {
              //carregarScene(menu, MenuController.class);
 
              alert.showAndWait();
+=======
+        if (autenticacao.autenticar(username, senha)) {
+            carregarScene(login, MenuController.class);
+>>>>>>> 25aa6a6078dab2ef26135a47fae2064aa5ccf5a0
         } else {
-            // logs.registrar(LogNivel.Erro, "Login", txtLogin.getText());
-            // Alert alert = new Alert(AlertType.CONFIRMATION, "Erro ao acessar o sistema.
-            // Deseja sair?", ButtonType.NO, ButtonType.NO);
-            // alert.showAndWait();
-
             Alert alert = new Alert(
-                AlertType.WARNING,
-                "Não foi possível acessar o sistema. Verifique se os dados informados estão corretos.",
-                ButtonType.OK)
-            ;
+                    AlertType.WARNING,
+                    "Não foi possível acessar o sistema. Verifique se os dados informados estão corretos.",
+                    ButtonType.OK);
+
             alert.showAndWait();
 
         }
     }
-
-    //@FXML
-   // public void irParaMenu(Event e) {
-    //    //carregarScene(painelNovoUsuario, NovoUsuarioController.class);
-   // }
 }
