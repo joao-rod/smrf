@@ -39,22 +39,8 @@ public class LoginController extends Controller {
         String username = inpLoginEmail.getText();
         String senha = inpLoginSenha.getText();
 
-<<<<<<< HEAD
-        if (autenticacao.autenticar(login, senha)) {
-           // carregarScene(menu, MenuController.class);
-
-            Alert alert = new Alert(AlertType.INFORMATION, "deu certo", ButtonType.OK);
-             alert.showAndWait();
-
-            //logs.registrar(LogNivel.Informacao, "Login", txtLogin.getText());
-
-             //carregarScene(menu, MenuController.class);
-
-             alert.showAndWait();
-=======
         if (autenticacao.autenticar(username, senha)) {
             carregarScene(login, MenuController.class);
->>>>>>> 25aa6a6078dab2ef26135a47fae2064aa5ccf5a0
         } else {
             Alert alert = new Alert(
                     AlertType.WARNING,
