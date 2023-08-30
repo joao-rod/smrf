@@ -56,7 +56,7 @@ public class LoginController extends Controller {
         String senha = inpLoginSenha.getText();
 
         if (autenticacao.autenticar(login, senha)) {
-            carregarScene(menu, MenuController.class);
+           // carregarScene(menu, MenuController.class);
 
             Alert alert = new Alert(AlertType.INFORMATION, "deu certo", ButtonType.OK);
              alert.showAndWait();

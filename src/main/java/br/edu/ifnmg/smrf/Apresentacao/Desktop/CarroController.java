@@ -23,7 +23,7 @@ import net.rgielen.fxweaver.core.FxmlView;
 
 @Service
 @FxmlView("NovoCarro.fxml")
-public class NovoCarroController extends Controller {
+public class CarroController extends Controller {
 
     @FXML
     private TextField CargoUsr;
@@ -55,7 +55,7 @@ public class NovoCarroController extends Controller {
     @FXML
     private TextField inpSobrenomeUsuario;
 
-    public NovoCarroController(){
+    public CarroController(){
 
 
     }
