@@ -31,7 +31,7 @@ public class PessoaDAO extends DAO<Pessoa> implements PessoaRepositorio {
 
     @Override
     public Pessoa abrirPorEmail(String email) {
-        Query consulta = getManager().createQuery("select p from psuario p where p.email = :p1");
+        Query consulta = getManager().createQuery("select p from Pessoa p where p.email = :p1");
         consulta.setParameter("p1", email);
         return (Pessoa) consulta.getSingleResult();
 

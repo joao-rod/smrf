@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import br.edu.ifnmg.smrf.entidades.Pessoa;
 import br.edu.ifnmg.smrf.servicos.AutenticacaoServico;
 import br.edu.ifnmg.smrf.servicos.PessoaRepositorio;
-import jakarta.persistence.NoResultException;
 
 @Service
 @Scope("singleton")
@@ -28,7 +27,7 @@ public class AutenticacaoServicoImp implements AutenticacaoServico {
 
             return usuario != null && usuario.getSenha().equals(senha);
 
-        } catch (NoResultException e) {
+        } catch (Exception e) {
             return false;
         }
     }
