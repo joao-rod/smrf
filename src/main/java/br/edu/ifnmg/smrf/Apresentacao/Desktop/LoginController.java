@@ -59,13 +59,11 @@ public class LoginController extends Controller {
             carregarScene(menu, MenuController.class);
 
             Alert alert = new Alert(AlertType.INFORMATION, "deu certo", ButtonType.OK);
-             alert.showAndWait();
+            alert.showAndWait();
 
             //logs.registrar(LogNivel.Informacao, "Login", txtLogin.getText());
 
-             //carregarScene(menu, MenuController.class);
-
-             alert.showAndWait();
+            //carregarScene(menu, MenuController.class);
         } else {
             // logs.registrar(LogNivel.Erro, "Login", txtLogin.getText());
             // Alert alert = new Alert(AlertType.CONFIRMATION, "Erro ao acessar o sistema.
