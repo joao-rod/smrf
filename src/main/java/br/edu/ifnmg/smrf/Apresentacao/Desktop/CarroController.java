@@ -67,14 +67,14 @@ private void openMainScreen(ActionEvent event) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("menu.fxml"));
         Parent menuPane = loader.load();
 
-        // Configurar qualquer coisa necessária no controlador da tela Menu
+        
         MenuController menuController = loader.getController();
-        // menuController.setup(...); // Configurações iniciais, se necessário
+        
 
         // Acessar o layout da tela Menu e adicionar à cena
         main.getScene().setRoot(menuPane);
     } catch (Exception e) {
-        // Tratar possíveis erros ao carregar a tela de menu
+        
         e.printStackTrace();
     }
 }
