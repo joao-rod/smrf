@@ -22,8 +22,8 @@ import javafx.scene.layout.AnchorPane;
 import net.rgielen.fxweaver.core.FxmlView;
 
 @Service
-@FxmlView("NovoUsr.fxml")
-public class NovoUsrController extends Controller {
+@FxmlView("gerenciaUsr.fxml")
+public class UsuarioController extends Controller {
 
     @FXML
     private TextField CargoUsr;
@@ -55,7 +55,18 @@ public class NovoUsrController extends Controller {
     @FXML
     private TextField inpSobrenomeUsuario;
 
-    public NovoUsrController(){
+    //gerencia usuario
+
+    @FXML
+    private Button deleteUsr;
+
+    @FXML
+    private Button procuraUsr;
+
+    @FXML
+    private Button updateUsr;
+
+    public UsuarioController(){
 
 
     }

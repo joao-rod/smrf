@@ -19,6 +19,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import net.rgielen.fxweaver.core.FxmlView;
 
 @Service
@@ -27,17 +28,44 @@ import net.rgielen.fxweaver.core.FxmlView;
 public class MenuController extends Controller {
 
     @FXML
-    private Button Adm;
-
-    @FXML
-    private Button Main;
-
-    @FXML
-    private Button OrdemServiço;
+    private Button adm;
 
     @FXML
     private Button fleet;
 
+    @FXML
+    private Button logout;
+
+    @FXML
+    private Button main;
+
+    @FXML
+    private StackPane menu;
+
+    @FXML
+    private Button ordemservico;
+
+   @Autowired
+   private CarroController CarroController;
+
+    @FXML
+    private void openCarroScreen(ActionEvent event) {
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("carro.fxml"));
+        AnchorPane carroPane = loader.load();
+
+        // Configurar qualquer coisa no controlador da tela Carro
+        CarroController carroController = loader.getController();
+        
+
+        
+        menu.getChildren().clear();
+        menu.getChildren().add(carroPane);
+    } catch (Exception e) {
+        // Tratar possíveis erros ao carregar a tela Carro
+        e.printStackTrace();
+    }
+    }
 }
 
 

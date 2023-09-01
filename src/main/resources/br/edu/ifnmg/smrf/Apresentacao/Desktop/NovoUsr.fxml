@@ -44,15 +44,15 @@
                            </font>
                         </Label>
                         <Line endX="73.5" layoutX="114.0" layoutY="198.0" startX="-100.0" stroke="WHITE" />
-                        <Button layoutX="7.0" layoutY="207.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="189.0" text="Principal" />
-                        <Button layoutX="7.0" layoutY="251.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="189.0" text="Frota" />
-                        <Button layoutX="7.0" layoutY="295.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="189.0" text="O.S" />
+                        <Button fx:id="main" layoutX="7.0" layoutY="207.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="189.0" text="Principal" />
+                        <Button fx:id="fleet" layoutX="7.0" layoutY="251.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="189.0" text="Frota" />
+                        <Button fx:id="ordemservico" layoutX="7.0" layoutY="295.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="189.0" text="O.S" />
                         <FontAwesomeIcon glyphName="GEAR" layoutX="53.0" layoutY="324.0" size="1.5em" />
                         <FontAwesomeIcon glyphName="AUTOMOBILE" layoutX="50.0" layoutY="280.0" size="1.5em" />
                         <FontAwesomeIcon glyphName="HOME" layoutX="52.0" layoutY="236.0" size="1.5em" />
-                        <Button layoutX="42.0" layoutY="515.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="116.0" text="Sair" />
+                        <Button fx:id="logout" layoutX="42.0" layoutY="515.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="116.0" text="Sair" />
                         <FontAwesomeIcon glyphName="SIGN_OUT" layoutX="49.0" layoutY="543.0" size="2em" />
-                        <Button layoutX="7.0" layoutY="338.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="189.0" text="RH" />
+                        <Button fx:id="adm" layoutX="7.0" layoutY="338.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="189.0" text="RH" />
                         <FontAwesomeIcon glyphName="USERS" layoutX="52.0" layoutY="366.0" size="1.3em" text="" />
                      </children>
                   </AnchorPane>
@@ -81,8 +81,8 @@
                                        </font>
                                     </Label>
                                     <TextField fx:id="inpNomeUsuario" layoutX="53.0" layoutY="139.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
-                                    <Button layoutX="731.0" layoutY="472.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="116.0" styleClass="update-btn" stylesheets="@lib/web/DesignPadrao.css" text="Cadastrar" />
-                                    <Button layoutX="11.0" layoutY="472.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="116.0" styleClass="delete-btn" stylesheets="@lib/web/Botoes.css" text="Cancelar" />
+                                    <Button fx:id="cadastraNovoUsr" layoutX="731.0" layoutY="472.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="116.0" styleClass="update-btn" stylesheets="@lib/web/DesignPadrao.css" text="Cadastrar" />
+                                    <Button fx:id="cancelaNovoUsr" layoutX="11.0" layoutY="472.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="116.0" styleClass="delete-btn" stylesheets="@lib/web/Botoes.css" text="Cancelar" />
                                     <TextField fx:id="inpSobrenomeUsuario" layoutX="281.0" layoutY="139.0" prefHeight="26.0" prefWidth="344.0" promptText="       " />
                                     <Label layoutX="281.0" layoutY="121.0" text="Sobrenome:" textFill="#368981">
                                        <font>
@@ -123,7 +123,7 @@
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <Button layoutX="503.0" layoutY="329.0" mnemonicParsing="false" opacity="0.18" prefHeight="20.0" prefWidth="28.0" />
+                                    <Button fx:id="procuraCargo" layoutX="503.0" layoutY="329.0" mnemonicParsing="false" opacity="0.18" prefHeight="20.0" prefWidth="28.0" />
                                     <FontAwesomeIcon glyphName="SEARCH" layoutX="511.0" layoutY="346.0" />
                                     <Label layoutX="55.0" layoutY="308.0" text="Email:" textFill="#368981">
                                        <font>

@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -22,42 +23,60 @@ import javafx.scene.layout.AnchorPane;
 import net.rgielen.fxweaver.core.FxmlView;
 
 @Service
-@FxmlView("NovoCarro.fxml")
+@FxmlView("carro.fxml")
 public class CarroController extends Controller {
 
+    //novo carro
     @FXML
-    private TextField CargoUsr;
+    private Button adm;
 
     @FXML
-    private DatePicker dataDataNascimento;
+    private Button cadastraCarro;
 
     @FXML
-    private TextField idUsr;
+    private Button cancelaCarro;
 
     @FXML
-    private TextField inpContatoUsuario;
+    private Button fleet;
 
     @FXML
-    private TextField inpContatoUsuario1;
+    private Button logout;
 
     @FXML
-    private TextField inpCpfCnpjUsuario;
+    private Button main;
 
     @FXML
-    private TextField inpNomeUsuario;
+    private Button ordemservico;
+
+    //reserva de carro
 
     @FXML
-    private TextField inpRGUsuario;
+    private Button escolhecondutor;
 
     @FXML
-    private TextField inpRuUsuario;
-
-    @FXML
-    private TextField inpSobrenomeUsuario;
+    private Button escolhemodelo;
 
     public CarroController(){
 
 
     }
+
+    @FXML
+private void openMainScreen(ActionEvent event) {
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("menu.fxml"));
+        Parent menuPane = loader.load();
+
+        // Configurar qualquer coisa necessária no controlador da tela Menu
+        MenuController menuController = loader.getController();
+        // menuController.setup(...); // Configurações iniciais, se necessário
+
+        // Acessar o layout da tela Menu e adicionar à cena
+        main.getScene().setRoot(menuPane);
+    } catch (Exception e) {
+        // Tratar possíveis erros ao carregar a tela de menu
+        e.printStackTrace();
+    }
+}
 
 }
