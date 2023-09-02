@@ -122,4 +122,22 @@ public class CarroController extends Controller {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void openAddCarroScreen(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("novoCarro.fxml"));
+            Parent novoCarroPane = loader.load();
+            //AnchorPane registraRetornoPane = loader.load();
+           
+            //CarroController carroController = loader.getController();
+
+            retorno.getScene().setRoot(novoCarroPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+
+
 }
