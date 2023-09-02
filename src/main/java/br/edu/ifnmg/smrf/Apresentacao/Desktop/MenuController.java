@@ -97,7 +97,7 @@ public class MenuController extends Controller {
             //AnchorPane registraRetornoPane = loader.load();
            
             //CarroController carroController = loader.getController();
-
+            //TESTE
             adm.getScene().setRoot(gerenciaUsrPane);
         } catch (IOException e) {
             e.printStackTrace();
