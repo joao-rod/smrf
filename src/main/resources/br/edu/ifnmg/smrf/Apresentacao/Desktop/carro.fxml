@@ -50,7 +50,7 @@
                         <FontAwesomeIcon glyphName="GEAR" layoutX="53.0" layoutY="324.0" size="1.5em" />
                         <FontAwesomeIcon glyphName="AUTOMOBILE" layoutX="50.0" layoutY="280.0" size="1.5em" />
                         <FontAwesomeIcon glyphName="HOME" layoutX="52.0" layoutY="236.0" size="1.5em" />
-                        <Button layoutX="42.0" layoutY="515.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="116.0" text="Sair" />
+                        <Button fx:id="logout" layoutX="42.0" layoutY="515.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="116.0" text="Sair" />
                         <FontAwesomeIcon glyphName="SIGN_OUT" layoutX="49.0" layoutY="543.0" size="2em" />
                         <Button fx:id="adm" layoutX="7.0" layoutY="339.0" mnemonicParsing="false" onAction="#openAdmScreen" prefHeight="44.0" prefWidth="189.0" text="RH" />
                         <FontAwesomeIcon glyphName="USERS" layoutX="52.0" layoutY="366.0" size="1.3em" />
@@ -62,33 +62,33 @@
                      <children>
                         <AnchorPane layoutX="217.0" layoutY="141.0" prefHeight="565.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="534.0" prefWidth="872.0" stylesheets="@lib/web/DesignPadrao.css">
+                              <AnchorPane layoutX="7.0" prefHeight="534.0" prefWidth="885.0" stylesheets="@lib/web/DesignPadrao.css">
                                  <children>
-                                    <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="278.0" prefWidth="877.0" stylesheets="@../Downloads/dashboardDesign.css">
+                                    <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="278.0" prefWidth="885.0" stylesheets="@../Downloads/dashboardDesign.css">
                                        <styleClass>
                                           <String fx:value="white-bg" />
                                           <String fx:value="shadow" />
                                        </styleClass>
                                        <children>
-                                          <TableView layoutX="11.0" layoutY="64.0" prefHeight="210.0" prefWidth="855.0">
+                                          <TableView layoutX="11.0" layoutY="64.0" prefHeight="210.0" prefWidth="883.0">
                                             <columns>
-                                              <TableColumn prefWidth="178.0" text="Modelo" />
-                                                <TableColumn prefWidth="178.0" text="Placa" />
-                                                <TableColumn prefWidth="178.0" text="Kilometragem" />
-                                                <TableColumn prefWidth="169.0" text="Data de Aquisição" />
-                                              <TableColumn prefWidth="151.0" text="Disponibilidade" />
+                                              <TableColumn prefWidth="180.0" text="Modelo" />
+                                                <TableColumn prefWidth="184.0" text="Placa" />
+                                                <TableColumn prefWidth="184.0" text="Kilometragem" />
+                                                <TableColumn prefWidth="177.0" text="Data de Aquisição" />
+                                              <TableColumn prefWidth="184.0" text="Disponibilidade" />
                                             </columns>
                                           </TableView>
                                           <TextField layoutX="14.0" layoutY="19.0" prefHeight="26.0" prefWidth="284.0" promptText="      Buscar" />
                                           <FontAwesomeIcon glyphName="SEARCH" layoutX="24.0" layoutY="37.0" size="1.2em" />
                                           <Button fx:id="novoAuto" layoutX="306.0" layoutY="19.0" mnemonicParsing="false" onAction="#openAddCarroScreen" prefHeight="30.0" prefWidth="30.0" />
                                           <FontAwesomeIcon glyphName="PLUS" layoutX="316.0" layoutY="38.0" />
-					  <Button fx:id="retorno" layoutX="364.0" layoutY="14.0" mnemonicParsing="false" onAction="#openRetornoScreen" prefHeight="36.0" prefWidth="150.0" styleClass="add-btn" stylesheets="@lib/web/Botoes.css" text="Registrar Retorno" />
+      					  <Button fx:id="retorno" layoutX="364.0" layoutY="14.0" mnemonicParsing="false" onAction="#openRetornoScreen" prefHeight="36.0" prefWidth="150.0" styleClass="add-btn" stylesheets="@lib/web/Botoes.css" text="Registrar Retorno" />
                                        </children>
                                     </AnchorPane>
                                     <Button fx:id="editaCarro" layoutX="728.0" layoutY="287.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="125.0" styleClass="update-btn" stylesheets="@lib/web/Botoes.css" text="Editar" />
                                     <Button fx:id="removeCarro" layoutX="14.0" layoutY="285.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="118.0" styleClass="delete-btn" stylesheets="@lib/web/Botoes.css" text="Remover" />
-                                    <Button layoutX="375.0" layoutY="287.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="125.0" styleClass="filter" stylesheets="@../Downloads/Botoes.css" text="Nova Reserva" />
+                                    <Button fx:id="novaViagem" layoutX="375.0" layoutY="287.0" mnemonicParsing="false" onAction="#openNovaReservaScreen" prefHeight="36.0" prefWidth="125.0" styleClass="filter" stylesheets="@lib/web/Botoes.css" text="Nova Reserva" />
                                  </children>
                                  <styleClass>
                                     <String fx:value="white-bg" />

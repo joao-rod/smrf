@@ -66,6 +66,9 @@ public class CarroController extends Controller {
     @FXML
     private Button escolhemodelo;
 
+    @FXML
+    private Button novaViagem;
+
     public CarroController(){
 
 
@@ -100,8 +103,8 @@ public class CarroController extends Controller {
         
         //se alguém mexer aki EU MATO ass: Proenca
         
-        //fleet.getChildren().clear();
-       // fleet.getChildren().add(carroPane);
+        contentPane.getChildren().clear();
+        contentPane.getChildren().add(carroPane);
     } catch (Exception e) {
         
         e.printStackTrace();
@@ -138,6 +141,21 @@ public class CarroController extends Controller {
         }
     }
     
+    @FXML
+    private void openNovaReservaScreen(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("reservaCarro.fxml"));
+            Parent reservaCarroPane = loader.load();
+            //AnchorPane registraRetornoPane = loader.load();
+           
+            //CarroController carroController = loader.getController();
+
+            novaViagem.getScene().setRoot(reservaCarroPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @FXML
     public void openAdmScreen(ActionEvent event) {
         try {

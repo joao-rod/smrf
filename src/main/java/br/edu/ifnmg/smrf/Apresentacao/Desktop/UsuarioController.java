@@ -129,10 +129,7 @@ public class UsuarioController extends Controller {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("carro.fxml"));
             Parent carroPane = loader.load();
-            // Você pode adicionar qualquer lógica adicional aqui
-            // Se necessário, obtenha o controlador para a tela de carro
-    
-            // Defina a cena raiz para exibir a tela de carro
+            
             main.getScene().setRoot(carroPane);
         } catch (IOException e) {
             e.printStackTrace();

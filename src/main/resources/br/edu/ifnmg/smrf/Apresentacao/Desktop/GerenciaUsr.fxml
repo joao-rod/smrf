@@ -66,19 +66,19 @@
                            <children>
                               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="564.8" prefWidth="900.0" stylesheets="@lib/web/DesignPadrao.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="278.0" prefWidth="877.0">
+                                    <AnchorPane prefHeight="278.0" prefWidth="900.0">
                                        <styleClass>
                                           <String fx:value="white-bg" />
                                           <String fx:value="shadow" />
                                        </styleClass>
                                        <children>
-                                          <TableView layoutX="6.0" layoutY="68.0" prefHeight="210.0" prefWidth="866.0">
+                                          <TableView layoutX="6.0" layoutY="68.0" prefHeight="210.0" prefWidth="893.0">
                                             <columns>
-                                              <TableColumn prefWidth="178.0" text="Nome" />
-                                              <TableColumn prefWidth="178.0" text="Matricula" />
-                                                <TableColumn prefWidth="178.0" text="Data Nasc." />
-                                                <TableColumn prefWidth="178.0" text="Data de Contratação" />
-                                                <TableColumn prefWidth="178.0" text="Endereço" />
+                                              <TableColumn prefWidth="180.0" text="Nome" />
+                                              <TableColumn prefWidth="184.0" text="Matricula" />
+                                                <TableColumn prefWidth="184.0" text="Data Nasc." />
+                                                <TableColumn prefWidth="184.0" text="Data de Contratação" />
+                                                <TableColumn prefWidth="184.0" text="Endereço" />
                                             </columns>
                                           </TableView>
                                           <TextField layoutX="14.0" layoutY="19.0" prefHeight="26.0" prefWidth="284.0" promptText="        Buscar" />
