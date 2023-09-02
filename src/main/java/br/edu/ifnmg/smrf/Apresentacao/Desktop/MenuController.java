@@ -54,7 +54,7 @@ public class MenuController extends Controller {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("carro.fxml"));
         AnchorPane carroPane = loader.load();
 
-        // Configurar qualquer coisa no controlador da tela Carro
+        
         CarroController carroController = loader.getController();
         
 
@@ -62,10 +62,12 @@ public class MenuController extends Controller {
         menu.getChildren().clear();
         menu.getChildren().add(carroPane);
     } catch (Exception e) {
-        // Tratar possíveis erros ao carregar a tela Carro
+        
         e.printStackTrace();
+        }
     }
-    }
+
+
 }
 
 
