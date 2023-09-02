@@ -114,10 +114,7 @@ public class UsuarioController extends Controller {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("gerenciaUsr.fxml"));
             Parent gerenciaUsrPane = loader.load();
-            // Você pode adicionar qualquer lógica adicional aqui
-            // Se necessário, obtenha o controlador para a tela de gerenciamento de usuário
-    
-            // Defina a cena raiz para exibir a tela de gerenciamento de usuário
+            
             main.getScene().setRoot(gerenciaUsrPane);
         } catch (IOException e) {
             e.printStackTrace();
