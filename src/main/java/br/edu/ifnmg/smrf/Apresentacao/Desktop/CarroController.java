@@ -7,7 +7,10 @@ import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import br.edu.ifnmg.smrf.entidades.Veiculo;
 import br.edu.ifnmg.smrf.servicos.AutenticacaoServico;
+import br.edu.ifnmg.smrf.servicos.VeiculoRepositorio;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +23,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
@@ -29,7 +34,8 @@ import net.rgielen.fxweaver.core.FxmlView;
 @Service
 @FxmlView("carro.fxml")
 public class CarroController extends Controller {
-
+    @Autowired
+    VeiculoRepositorio veiculos;
     //novo carro
     @FXML
     private Button adm;
@@ -57,6 +63,36 @@ public class CarroController extends Controller {
 
     @FXML
     private AnchorPane contentPane;
+
+    @FXML
+    private TextField anodefabricacao;
+
+   
+    @FXML
+    private DatePicker datadeaquisicao;
+
+    @FXML
+    private TextArea descricao;
+
+    @FXML
+    private TextField fabricante;
+
+
+    @FXML
+    private TextField modelo;
+
+
+    @FXML
+    private TextField placa;
+
+    @FXML
+    private TextField renavan;
+
+    @FXML
+    private TextField versao;
+
+    
+
 
     //reserva de carro
 
@@ -168,6 +204,24 @@ public class CarroController extends Controller {
             adm.getScene().setRoot(gerenciaUsrPane);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void novoVeiculo(ActionEvent event) {
+     Veiculo veiculo = new Veiculo(); 
+     
+     veiculo.setAno(anodefabricacao.getText());
+     veiculo.setModelo(modelo.getText());
+     veiculo.setFabricante(fabricante.getText());
+     veiculo.setRenavan(renavan.getText());
+     veiculo.setDescricao(descricao.getText());
+     veiculo.setDataDeAquisicao(datadeaquisicao.getValue());
+     veiculo.setPlaca(placa.getText());
+        try{
+     veiculos.Salvar(veiculo);
+        } catch (Exception e) {
+            System.out.println(veiculo);
         }
     }
 

@@ -79,10 +79,10 @@
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextField layoutX="53.0" layoutY="139.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
-                                    <Button fx:id="cadastraCarro" layoutX="731.0" layoutY="472.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="116.0" styleClass="update-btn" stylesheets="@lib/web/Botoes.css" text="Cadastrar" />
+                                    <TextField fx:id="modelo" layoutX="53.0" layoutY="139.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <Button fx:id="cadastraCarro" layoutX="731.0" layoutY="472.0" mnemonicParsing="false" onAction="#novoVeiculo" prefHeight="48.0" prefWidth="116.0" styleClass="update-btn" stylesheets="@lib/web/Botoes.css" text="Cadastrar" />
                                     <Button fx:id="cancelaCarro" layoutX="11.0" layoutY="472.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="116.0" styleClass="delete-btn" stylesheets="@lib/web/Botoes.css" text="Cancelar" />
-                                    <TextField layoutX="281.0" layoutY="139.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <TextField fx:id="fabricante" layoutX="281.0" layoutY="139.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
                                     <Label layoutX="281.0" layoutY="121.0" text="Fabricante:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
@@ -93,37 +93,37 @@
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextField layoutX="281.0" layoutY="202.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <TextField fx:id="renavan" layoutX="281.0" layoutY="202.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
                                     <Label layoutX="281.0" layoutY="184.0" text="Renavan:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextField layoutX="508.0" layoutY="139.0" prefHeight="26.0" prefWidth="315.0" promptText="       " />
+                                    <TextField fx:id="versao" layoutX="508.0" layoutY="139.0" prefHeight="26.0" prefWidth="315.0" promptText="       " />
                                     <Label layoutX="508.0" layoutY="121.0" text="Versão:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextField layoutX="508.0" layoutY="202.0" prefHeight="26.0" prefWidth="140.0" promptText="       " />
+                                    <TextField fx:id="anodefabricacao" layoutX="508.0" layoutY="202.0" prefHeight="26.0" prefWidth="140.0" promptText="       " />
                                     <Label layoutX="507.0" layoutY="184.0" text="Ano de Fabricação:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextArea layoutX="55.0" layoutY="267.0" prefHeight="200.0" prefWidth="548.0" />
+                                    <TextArea fx:id="descricao" layoutX="55.0" layoutY="267.0" prefHeight="200.0" prefWidth="548.0" />
                                     <Label layoutX="55.0" layoutY="249.0" text="Descrição:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextField layoutX="666.0" layoutY="202.0" prefHeight="26.0" prefWidth="137.0" promptText="       " />
+                                    <TextField fx:id="placa" layoutX="666.0" layoutY="202.0" prefHeight="26.0" prefWidth="137.0" promptText="       " />
                                     <Label layoutX="666.0" layoutY="184.0" text="Placa:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <DatePicker layoutX="55.0" layoutY="202.0" />
+                                    <DatePicker fx:id="datadeaquisicao" layoutX="55.0" layoutY="202.0" />
                                  </children>
                               </AnchorPane>
                            </children>
