@@ -72,7 +72,7 @@ public class CarroController extends Controller {
     }
 
     @FXML
-    private void openMainScreen(ActionEvent event) {
+    public void openMainScreen(ActionEvent event) {
     try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("menu.fxml"));
         Parent menuPane = loader.load();
@@ -138,6 +138,19 @@ public class CarroController extends Controller {
         }
     }
     
+    @FXML
+    public void openAdmScreen(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("gerenciaUsr.fxml"));
+            Parent gerenciaUsrPane = loader.load();
+            //AnchorPane registraRetornoPane = loader.load();
+           
+            //CarroController carroController = loader.getController();
 
+            adm.getScene().setRoot(gerenciaUsrPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

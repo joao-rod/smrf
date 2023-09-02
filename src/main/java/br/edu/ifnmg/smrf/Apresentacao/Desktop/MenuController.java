@@ -2,6 +2,9 @@ package br.edu.ifnmg.smrf.Apresentacao.Desktop;
 
 import javafx.fxml.Initializable;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import br.edu.ifnmg.smrf.servicos.AutenticacaoServico;
@@ -10,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -64,6 +68,39 @@ public class MenuController extends Controller {
     } catch (Exception e) {
         
         e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void openMainScreen(ActionEvent event) {
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("menu.fxml"));
+        Parent menuPane = loader.load();
+
+        
+        MenuController menuController = loader.getController();
+        
+
+        
+        main.getScene().setRoot(menuPane);
+    } catch (Exception e) {
+        
+        e.printStackTrace();
+        }
+    }
+
+     @FXML
+    public void openAdmScreen(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("gerenciaUsr.fxml"));
+            Parent gerenciaUsrPane = loader.load();
+            //AnchorPane registraRetornoPane = loader.load();
+           
+            //CarroController carroController = loader.getController();
+
+            adm.getScene().setRoot(gerenciaUsrPane);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

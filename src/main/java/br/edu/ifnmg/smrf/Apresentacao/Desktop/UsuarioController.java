@@ -2,6 +2,9 @@ package br.edu.ifnmg.smrf.Apresentacao.Desktop;
 
 import javafx.fxml.Initializable;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import br.edu.ifnmg.smrf.servicos.AutenticacaoServico;
@@ -10,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -24,6 +28,8 @@ import net.rgielen.fxweaver.core.FxmlView;
 @Service
 @FxmlView("gerenciaUsr.fxml")
 public class UsuarioController extends Controller {
+
+//GERENCIA USR
 
     @FXML
     private TextField CargoUsr;
@@ -55,20 +61,81 @@ public class UsuarioController extends Controller {
     @FXML
     private TextField inpSobrenomeUsuario;
 
-    //gerencia usuario
-
     @FXML
     private Button deleteUsr;
 
     @FXML
     private Button procuraUsr;
 
+
+    //BOTÕES DA NAV BAR
+
+
     @FXML
-    private Button updateUsr;
+    private Button adm;
+
+    @FXML
+    private Button fleet;
+
+    @FXML
+    private Button main;
+
+    @FXML
+    private Button ordemservico;
+
+    @FXML
+    private Button logout;
 
     public UsuarioController(){
 
 
     }
 
+    @FXML
+    public void openMainScreen(ActionEvent event) {
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("menu.fxml"));
+        Parent menuPane = loader.load();
+
+        
+        MenuController menuController = loader.getController();
+        
+
+        
+        main.getScene().setRoot(menuPane);
+    } catch (Exception e) {
+        
+        e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void openAdmScreen(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("gerenciaUsr.fxml"));
+            Parent gerenciaUsrPane = loader.load();
+            // Você pode adicionar qualquer lógica adicional aqui
+            // Se necessário, obtenha o controlador para a tela de gerenciamento de usuário
+    
+            // Defina a cena raiz para exibir a tela de gerenciamento de usuário
+            main.getScene().setRoot(gerenciaUsrPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    @FXML
+    public void openCarroScreen(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("carro.fxml"));
+            Parent carroPane = loader.load();
+            // Você pode adicionar qualquer lógica adicional aqui
+            // Se necessário, obtenha o controlador para a tela de carro
+    
+            // Defina a cena raiz para exibir a tela de carro
+            main.getScene().setRoot(carroPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
