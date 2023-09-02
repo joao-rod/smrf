@@ -67,6 +67,9 @@ public class UsuarioController extends Controller {
     @FXML
     private Button procuraUsr;
 
+    @FXML
+    private Button criaUsr;
+
 
     //BOTÕES DA NAV BAR
 
@@ -122,6 +125,19 @@ public class UsuarioController extends Controller {
     }
     
     @FXML
+    private void openNovoUserScreen(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("novoUsr.fxml"));
+            Parent novoUsrPane = loader.load();
+            
+            criaUsr.getScene().setRoot(novoUsrPane);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     public void openCarroScreen(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("carro.fxml"));
@@ -132,4 +148,6 @@ public class UsuarioController extends Controller {
             e.printStackTrace();
         }
     }
+    
+    
 }
