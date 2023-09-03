@@ -1,24 +1,27 @@
 package br.edu.ifnmg.smrf.Apresentacao.Desktop;
 
-import java.io.IOException;
-
 import org.springframework.stereotype.Service;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.StackPane;
 import net.rgielen.fxweaver.core.FxmlView;
 
 @Service
 @FxmlView("gerenciaUsr.fxml")
 public class UsuarioController extends Controller {
 
-//GERENCIA USR
+    // parents usr
+    @FXML
+    private StackPane gerenciaUsr;
 
+    @FXML
+    private StackPane novoUsr;
+
+    // GERENCIA USR
     @FXML
     private TextField CargoUsr;
 
@@ -58,10 +61,7 @@ public class UsuarioController extends Controller {
     @FXML
     private Button criaUsr;
 
-
-    //BOTÕES DA NAV BAR
-
-
+    // BOTÕES DA NAV BAR
     @FXML
     private Button adm;
 
@@ -77,50 +77,30 @@ public class UsuarioController extends Controller {
     @FXML
     private Button logout;
 
-    public UsuarioController(){
-
-
-    }
-
     @FXML
     public void openMainScreen(ActionEvent event) {
-    try {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("menu.fxml"));
-        Parent menuPane = loader.load();
+        try {
+            trocarTela(gerenciaUsr, MenuController.class, "menu.fxml");
+        } catch (Exception e) {
 
-        
-        MenuController menuController = loader.getController();
-        
-
-        
-        main.getScene().setRoot(menuPane);
-    } catch (Exception e) {
-        
-        e.printStackTrace();
+            e.printStackTrace();
         }
     }
 
     @FXML
     public void openAdmScreen(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("gerenciaUsr.fxml"));
-            Parent gerenciaUsrPane = loader.load();
-            
-            main.getScene().setRoot(gerenciaUsrPane);
-        } catch (IOException e) {
+            trocarTela(novoUsr, UsuarioController.class, "gerenciaUsr.fxml");
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
+
     @FXML
     private void openNovoUserScreen(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("novoUsr.fxml"));
-            Parent novoUsrPane = loader.load();
-            
-            criaUsr.getScene().setRoot(novoUsrPane);
-
-        } catch (IOException e) {
+            trocarTela(gerenciaUsr, UsuarioController.class, "novoUsr.fxml");
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -128,14 +108,9 @@ public class UsuarioController extends Controller {
     @FXML
     public void openCarroScreen(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("carro.fxml"));
-            Parent carroPane = loader.load();
-            
-            main.getScene().setRoot(carroPane);
-        } catch (IOException e) {
+            trocarTela(gerenciaUsr, CarroController.class, "carro.fxml");
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
-    
 }
