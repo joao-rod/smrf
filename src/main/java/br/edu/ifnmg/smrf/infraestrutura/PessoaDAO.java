@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import br.edu.ifnmg.smrf.entidades.Pessoa;
 import br.edu.ifnmg.smrf.servicos.PessoaRepositorio;
 import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 
 @Service
 public class PessoaDAO extends DAO<Pessoa> implements PessoaRepositorio {
@@ -18,8 +19,8 @@ public class PessoaDAO extends DAO<Pessoa> implements PessoaRepositorio {
 
     @Override
     public List<Pessoa> Buscar() {
-        Query consulta = getManager().createQuery("select p from Pessoa p");
-        return (List<Pessoa>) consulta.getResultList();
+        TypedQuery<Pessoa> consulta = getManager().createQuery("select p from Pessoa p", Pessoa.class);
+        return consulta.getResultList();
     }
 
     @Override
@@ -64,12 +65,12 @@ public class PessoaDAO extends DAO<Pessoa> implements PessoaRepositorio {
             parametros.add(filtro.getNome());
         }
 
-        if(filtro.getEmail() != ""){
+        if (filtro.getEmail() != "") {
             where += " p.cpf = :p";
             parametros.add(filtro.getEmail());
         }
 
-        Query consulta = getManager().createQuery("select p from Pessoa p where " + where);
+        TypedQuery<Pessoa> consulta = getManager().createQuery("select p from Pessoa p where " + where, Pessoa.class);
 
         if (where.length() > 0) {
             int posicao = 0;
@@ -79,7 +80,7 @@ public class PessoaDAO extends DAO<Pessoa> implements PessoaRepositorio {
             }
         }
 
-        return (List<Pessoa>) consulta.getResultList();
+        return consulta.getResultList();
 
     }
 }

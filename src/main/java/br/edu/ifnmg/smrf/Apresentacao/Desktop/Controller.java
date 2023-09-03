@@ -19,12 +19,10 @@ public class Controller {
     public void initialize() {
         String[] args = new String[0];
 
-        this.contextoSpring = new SpringApplicationBuilder()
-                .sources(AplicacaoSpring.class)
-                .run(args);
+        this.contextoSpring = new SpringApplicationBuilder().sources(AplicacaoSpring.class).run(args);
     }
 
-    public void carregarScene(Node parent, Class controller) {
+    public void carregarScene(Node parent, Class<?> controller) {
 
         Stage stage = (Stage) parent.getScene().getWindow();
         FxWeaver fxWeaver = contextoSpring.getBean(FxWeaver.class);
@@ -35,16 +33,16 @@ public class Controller {
         stage.show();
     }
 
-    // public void trocarTela(Node parent, Class controller, String fxmlPath) {
-        
-    //     Stage stage = (Stage) parent.getScene().getWindow();
-    //     FxWeaver fxWeaver = contextoSpring.getBean(FxWeaver.class);
-    //     Parent root = (Parent) fxWeaver.loadView(controller, fxmlPath);
-    //     Scene scene = new Scene(root);
-        
-    //     stage.setScene(scene);
-    //     stage.show();
-    // }
+    public void trocarTela(Node parent, Class<?> controller, String fxmlPath) {
+
+        Stage stage = (Stage) parent.getScene().getWindow();
+        FxWeaver fxWeaver = contextoSpring.getBean(FxWeaver.class);
+        Parent root = (Parent) fxWeaver.loadView(controller, fxmlPath);
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+        stage.show();
+    }
 
     public ConfigurableApplicationContext getContextoSpring() {
         return contextoSpring;

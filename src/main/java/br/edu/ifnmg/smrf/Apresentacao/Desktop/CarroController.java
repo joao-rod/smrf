@@ -1,42 +1,40 @@
 package br.edu.ifnmg.smrf.Apresentacao.Desktop;
 
-import javafx.fxml.Initializable;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
-
 import java.io.IOException;
+import java.lang.reflect.Field;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.ifnmg.smrf.entidades.Veiculo;
-import br.edu.ifnmg.smrf.servicos.AutenticacaoServico;
 import br.edu.ifnmg.smrf.servicos.VeiculoRepositorio;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.Spinner;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
 import net.rgielen.fxweaver.core.FxmlView;
 
 @Service
 @FxmlView("carro.fxml")
 public class CarroController extends Controller {
     @Autowired
-    VeiculoRepositorio veiculos;
-    //novo carro
+    VeiculoRepositorio veiculoRepositorio;
+
+    // parents cars
+    @FXML
+    private AnchorPane veiculos;
+
+    @FXML
+    private AnchorPane novoCarro;
+
     @FXML
     private Button adm;
 
@@ -67,7 +65,6 @@ public class CarroController extends Controller {
     @FXML
     private TextField anodefabricacao;
 
-   
     @FXML
     private DatePicker datadeaquisicao;
 
@@ -77,10 +74,8 @@ public class CarroController extends Controller {
     @FXML
     private TextField fabricante;
 
-
     @FXML
     private TextField modelo;
-
 
     @FXML
     private TextField placa;
@@ -91,10 +86,7 @@ public class CarroController extends Controller {
     @FXML
     private TextField versao;
 
-    
-
-
-    //reserva de carro
+    // reserva de carro
 
     @FXML
     private Button escolhecondutor;
@@ -105,45 +97,40 @@ public class CarroController extends Controller {
     @FXML
     private Button novaViagem;
 
-    public CarroController(){
-
+    public CarroController() {
 
     }
 
     @FXML
     public void openMainScreen(ActionEvent event) {
-    try {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("menu.fxml"));
-        Parent menuPane = loader.load();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("menu.fxml"));
+            Parent menuPane = loader.load();
 
-        
-        MenuController menuController = loader.getController();
-        
+            MenuController menuController = loader.getController();
 
-        
-        main.getScene().setRoot(menuPane);
-    } catch (Exception e) {
-        
-        e.printStackTrace();
+            main.getScene().setRoot(menuPane);
+        } catch (Exception e) {
+
+            e.printStackTrace();
         }
     }
 
     @FXML
     public void openCarroScreen(ActionEvent event) {
-    try {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("carro.fxml"));
-        AnchorPane carroPane = loader.load();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("carro.fxml"));
+            AnchorPane carroPane = loader.load();
 
-        
-        CarroController carroController = loader.getController();
-        
-        //se alguém mexer aki EU MATO ass: Proenca
-        
-        contentPane.getChildren().clear();
-        contentPane.getChildren().add(carroPane);
-    } catch (Exception e) {
-        
-        e.printStackTrace();
+            CarroController carroController = loader.getController();
+
+            // se alguém mexer aki EU MATO ass: Proenca
+
+            contentPane.getChildren().clear();
+            contentPane.getChildren().add(carroPane);
+        } catch (Exception e) {
+
+            e.printStackTrace();
         }
     }
 
@@ -152,9 +139,9 @@ public class CarroController extends Controller {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("registraRetorno.fxml"));
             Parent registraRetornoPane = loader.load();
-            //AnchorPane registraRetornoPane = loader.load();
-           
-            //CarroController carroController = loader.getController();
+            // AnchorPane registraRetornoPane = loader.load();
+
+            // CarroController carroController = loader.getController();
 
             retorno.getScene().setRoot(registraRetornoPane);
         } catch (IOException e) {
@@ -165,26 +152,20 @@ public class CarroController extends Controller {
     @FXML
     private void openAddCarroScreen(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("novoCarro.fxml"));
-            Parent novoCarroPane = loader.load();
-            //AnchorPane registraRetornoPane = loader.load();
-           
-            //CarroController carroController = loader.getController();
-
-            retorno.getScene().setRoot(novoCarroPane);
-        } catch (IOException e) {
+            trocarTela(veiculos, CarroController.class, "novoCarro.fxml");
+           } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
+
     @FXML
     private void openNovaReservaScreen(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("reservaCarro.fxml"));
             Parent reservaCarroPane = loader.load();
-            //AnchorPane registraRetornoPane = loader.load();
-           
-            //CarroController carroController = loader.getController();
+            // AnchorPane registraRetornoPane = loader.load();
+
+            // CarroController carroController = loader.getController();
 
             novaViagem.getScene().setRoot(reservaCarroPane);
         } catch (IOException e) {
@@ -197,9 +178,9 @@ public class CarroController extends Controller {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("gerenciaUsr.fxml"));
             Parent gerenciaUsrPane = loader.load();
-            //AnchorPane registraRetornoPane = loader.load();
-           
-            //CarroController carroController = loader.getController();
+            // AnchorPane registraRetornoPane = loader.load();
+
+            // CarroController carroController = loader.getController();
 
             adm.getScene().setRoot(gerenciaUsrPane);
         } catch (IOException e) {
@@ -209,19 +190,52 @@ public class CarroController extends Controller {
 
     @FXML
     public void novoVeiculo(ActionEvent event) {
-     Veiculo veiculo = new Veiculo(); 
-     
-     veiculo.setAno(anodefabricacao.getText());
-     veiculo.setModelo(modelo.getText());
-     veiculo.setFabricante(fabricante.getText());
-     veiculo.setRenavan(renavan.getText());
-     veiculo.setDescricao(descricao.getText());
-     veiculo.setDataDeAquisicao(datadeaquisicao.getValue());
-     veiculo.setPlaca(placa.getText());
-        try{
-     veiculos.Salvar(veiculo);
+        Veiculo veiculo = new Veiculo();
+
+        veiculo.setModelo(modelo.getText());
+        veiculo.setFabricante(fabricante.getText());
+        veiculo.setRenavan(renavan.getText());
+        veiculo.setDescricao(descricao.getText());
+        veiculo.setDataDeAquisicao(datadeaquisicao.getValue());
+        veiculo.setPlaca(placa.getText());
+        veiculo.setVersao(versao.getText());
+
+        try {
+            veiculo.setAno(Integer.valueOf(anodefabricacao.getText()));
         } catch (Exception e) {
-            System.out.println(veiculo);
+            Alert alert = new Alert(AlertType.WARNING, "Ano de fabricação deve ser um numero", ButtonType.OK);
+            alert.showAndWait();
+
+            return;
+        }
+
+        Field[] atributos = veiculo.getClass().getDeclaredFields();
+        for (Field atributo : atributos) {
+            atributo.setAccessible(true);
+            try {
+                if (atributo.get(veiculo) == null) {
+                    Alert alert = new Alert(AlertType.ERROR, "Há campos sem preencher", ButtonType.OK);
+                    alert.showAndWait();
+
+                    return;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        try {
+            veiculoRepositorio.Salvar(veiculo);
+
+            Alert alert = new Alert(AlertType.INFORMATION, "Salvo com sucesso!", ButtonType.OK);
+            alert.showAndWait();
+
+            if (alert.getResult() == ButtonType.OK) {
+                trocarTela(novoCarro, CarroController.class, "carro.fxml");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
