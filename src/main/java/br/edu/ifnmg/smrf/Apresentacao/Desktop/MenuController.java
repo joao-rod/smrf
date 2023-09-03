@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import net.rgielen.fxweaver.core.FxmlView;
 
 @Service
@@ -28,7 +29,7 @@ public class MenuController extends Controller {
     private Button main;
 
     @FXML
-    private StackPane menu;
+    private VBox menu;
 
     @FXML
     private Button ordemservico;
@@ -42,20 +43,20 @@ public class MenuController extends Controller {
         }
     }
 
-    @FXML
-    public void openMainScreen(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("menu.fxml"));
-            Parent menuPane = loader.load();
+    //@FXML
+    //public void openMainScreen(ActionEvent event) {
+      //  try {
+            // FXMLLoader loader = new FXMLLoader(getClass().getResource("menu.fxml"));
+    //         Parent menuPane = loader.load();
 
-            MenuController menuController = loader.getController();
+    //         MenuController menuController = loader.getController();
 
-            main.getScene().setRoot(menuPane);
-        } catch (Exception e) {
+    //         main.getScene().setRoot(menuPane);
+    //     } catch (Exception e) {
 
-            e.printStackTrace();
-        }
-    }
+    //         e.printStackTrace();
+    //     }
+    // }
 
     @FXML
     public void openAdmScreen(ActionEvent event) {
