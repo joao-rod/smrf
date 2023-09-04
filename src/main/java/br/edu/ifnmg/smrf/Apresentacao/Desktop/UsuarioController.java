@@ -61,54 +61,10 @@ public class UsuarioController extends Controller {
     @FXML
     private Button criaUsr;
 
-    // BOTÕES DA NAV BAR
-    @FXML
-    private Button adm;
-
-    @FXML
-    private Button fleet;
-
-    @FXML
-    private Button main;
-
-    @FXML
-    private Button ordemservico;
-
-    @FXML
-    private Button logout;
-
-    @FXML
-    public void openMainScreen(ActionEvent event) {
-        try {
-            trocarTela(gerenciaUsr, MenuController.class, "menu.fxml");
-        } catch (Exception e) {
-
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    public void openAdmScreen(ActionEvent event) {
-        try {
-            trocarTela(novoUsr, UsuarioController.class, "gerenciaUsr.fxml");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     @FXML
     private void openNovoUserScreen(ActionEvent event) {
         try {
             trocarTela(gerenciaUsr, UsuarioController.class, "novoUsr.fxml");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    public void openCarroScreen(ActionEvent event) {
-        try {
-            trocarTela(gerenciaUsr, CarroController.class, "carro.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }

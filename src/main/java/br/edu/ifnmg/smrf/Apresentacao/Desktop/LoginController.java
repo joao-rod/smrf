@@ -40,7 +40,7 @@ public class LoginController extends Controller {
         String senha = inpLoginSenha.getText();
 
         if (autenticacao.autenticar(username, senha)) {
-            carregarScene(login, MenuController.class);
+            trocarTela(login, HomepageController.class, "homepage.fxml");
         } else {
             Alert alert = new Alert(
                     AlertType.WARNING,

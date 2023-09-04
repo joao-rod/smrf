@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="menu1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifnmg.smrf.Apresentacao.Desktop.MenuController">
+<StackPane fx:id="homepage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifnmg.smrf.Apresentacao.Desktop.HomepageController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -26,7 +26,7 @@
                   </AnchorPane>
                </top>
                <left>
-               <fx:include source="template.fxml">
+                  <fx:include source="template.fxml" />
                </left>
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@lib/web/DesignPadrao.css" BorderPane.alignment="CENTER">
