@@ -56,7 +56,7 @@
                                     </Label>
                                     <TextField fx:id="modelo" layoutX="53.0" layoutY="139.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
                                     <Button fx:id="cadastraCarro" layoutX="731.0" layoutY="472.0" mnemonicParsing="false" onAction="#novoVeiculo" prefHeight="48.0" prefWidth="116.0" styleClass="update-btn" stylesheets="@lib/web/Botoes.css" text="Cadastrar" />
-                                    <Button fx:id="cancelaCarro" layoutX="11.0" layoutY="472.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="116.0" styleClass="delete-btn" stylesheets="@lib/web/Botoes.css" text="Cancelar" />
+                                    <Button fx:id="cancelaCarro" onAction="#cancelaNovoCarro" layoutX="11.0" layoutY="472.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="116.0" styleClass="delete-btn" stylesheets="@lib/web/Botoes.css" text="Cancelar" />
                                     <TextField fx:id="fabricante" layoutX="281.0" layoutY="139.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
                                     <Label layoutX="281.0" layoutY="121.0" text="Fabricante:" textFill="#368981">
                                        <font>

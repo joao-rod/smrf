@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="contentPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifnmg.smrf.Apresentacao.Desktop.CarroController">
+<AnchorPane fx:id="reserva" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifnmg.smrf.Apresentacao.Desktop.CarroController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -57,7 +57,7 @@
                                     </Label>
                                     <TextField layoutX="53.0" layoutY="139.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
                                     <Button layoutX="731.0" layoutY="472.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="116.0" styleClass="filter" stylesheets="@lib/web/Botoes.css" text="Reservar" />
-                                    <Button layoutX="11.0" layoutY="472.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="116.0" styleClass="delete-btn" stylesheets="@lib/web/Botoes.css" text="Cancelar" />
+                                    <Button layoutX="11.0" layoutY="472.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="116.0" styleClass="delete-btn" stylesheets="@lib/web/Botoes.css" text="Cancelar" onAction="#cancelaReserva" />
                                     <TextField layoutX="281.0" layoutY="139.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
                                     <Label layoutX="281.0" layoutY="121.0" text="Placa:" textFill="#368981">
                                        <font>

@@ -33,13 +33,13 @@ public class CarroController extends Controller {
     private AnchorPane novoCarro;
 
     @FXML
-    private Button cadastraCarro;
+    private AnchorPane retorno;
 
     @FXML
-    private Button cancelaCarro;
+    private AnchorPane reserva;
 
     @FXML
-    private Button retorno;
+    private Button btnRetorno;
 
     @FXML
     private Button ordemservico;
@@ -91,7 +91,7 @@ public class CarroController extends Controller {
     private void openAddCarroScreen(ActionEvent event) {
         try {
             trocarTela(veiculos, CarroController.class, "novoCarro.fxml");
-           } catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -100,6 +100,33 @@ public class CarroController extends Controller {
     private void openNovaReservaScreen(ActionEvent event) {
         try {
             trocarTela(veiculos, CarroController.class, "reservaCarro.fxml");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void cancelaNovoCarro(ActionEvent event) {
+        try {
+            trocarTela(novoCarro, CarroController.class, "carro.fxml");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void cancelaRetorno(ActionEvent event) {
+        try {
+            trocarTela(retorno, CarroController.class, "carro.fxml");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void cancelaReserva(ActionEvent event) {
+        try {
+            trocarTela(reserva, CarroController.class, "carro.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -150,9 +177,13 @@ public class CarroController extends Controller {
             if (alert.getResult() == ButtonType.OK) {
                 trocarTela(novoCarro, CarroController.class, "carro.fxml");
             }
-
         } catch (Exception e) {
-            e.printStackTrace();
+            Alert alert = new Alert(AlertType.ERROR, "Erro ao tentar salvar os dados", ButtonType.OK);
+            alert.showAndWait();
+
+            if (alert.getResult() == ButtonType.OK) {
+                trocarTela(novoCarro, CarroController.class, "carro.fxml");
+            }
         }
     }
 
