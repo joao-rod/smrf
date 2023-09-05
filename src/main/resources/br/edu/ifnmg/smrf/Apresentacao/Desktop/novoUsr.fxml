@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?> -->
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
@@ -22,7 +22,7 @@
                <top>
                   <AnchorPane prefHeight="35.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <!-- <FontAwesomeIcon glyphName="TRUCK" layoutX="14.0" layoutY="22.0" size="1.5em" /> -->
+                        <FontAwesomeIcon glyphName="TRUCK" layoutX="14.0" layoutY="22.0" size="1.5em" />
                         <Label layoutX="42.0" layoutY="6.0" text="Sistema de Monitoramento de Frotas - SMRF">
                            <font>
                               <Font size="14.0" />
@@ -88,7 +88,7 @@
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <!-- <FontAwesomeIcon glyphName="SEARCH" layoutX="511.0" layoutY="346.0" /> -->
+                                    <FontAwesomeIcon glyphName="SEARCH" layoutX="511.0" layoutY="346.0" />
                                     <Label layoutX="55.0" layoutY="247.0" text="Email:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
