@@ -80,7 +80,7 @@ public class UsuarioController extends Controller {
     @FXML
     private Button criaUsr;
 
-    // FIX: Corrigir função
+    // FIX: Corrigir função 
     @FXML
     private void configInpCargo() {
         inpCargo.setItems(FXCollections.observableArrayList(TipoPessoa.values()));
