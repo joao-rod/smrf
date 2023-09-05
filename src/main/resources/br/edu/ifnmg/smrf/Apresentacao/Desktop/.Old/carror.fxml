@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="veiculos" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifnmg.smrf.Apresentacao.Desktop.CarroController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="199.0" layoutY="26.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane fx:id="carro" prefHeight="35.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <FontAwesomeIcon glyphName="TRUCK" layoutX="14.0" layoutY="22.0" size="1.5em" />
+                        <Label layoutX="42.0" layoutY="6.0" text="Sistema de Monitoramento de Frotas - SMRF">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <fx:include source="template.fxml" />
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="217.0" layoutY="141.0" prefHeight="565.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="7.0" prefHeight="534.0" prefWidth="885.0" stylesheets="@lib/web/DesignPadrao.css">
+                                 <children>
+                                    <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="278.0" prefWidth="885.0" stylesheets="@../Downloads/dashboardDesign.css">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <TableView layoutX="11.0" layoutY="64.0" prefHeight="210.0" prefWidth="883.0">
+                                            <columns>
+                                              <TableColumn prefWidth="180.0" text="Modelo" />
+                                                <TableColumn prefWidth="184.0" text="Placa" />
+                                                <TableColumn prefWidth="184.0" text="Kilometragem" />
+                                                <TableColumn prefWidth="177.0" text="Data de Aquisição" />
+                                              <TableColumn prefWidth="184.0" text="Disponibilidade" />
+                                            </columns>
+                                          </TableView>
+                                          <TextField layoutX="14.0" layoutY="19.0" prefHeight="26.0" prefWidth="284.0" promptText="      Buscar" />
+                                          <FontAwesomeIcon glyphName="SEARCH" layoutX="24.0" layoutY="37.0" size="1.2em" />
+                                          <Button fx:id="novoAuto" layoutX="306.0" layoutY="19.0" mnemonicParsing="false" onAction="#openAddCarroScreen" prefHeight="30.0" prefWidth="30.0" />
+                                          <FontAwesomeIcon glyphName="PLUS" layoutX="316.0" layoutY="38.0" />
+      					                     <Button fx:id="btnRetorno" layoutX="364.0" layoutY="14.0" mnemonicParsing="false" onAction="#openRetornoScreen" prefHeight="36.0" prefWidth="150.0" styleClass="add-btn" stylesheets="@lib/web/Botoes.css" text="Registrar Retorno" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Button fx:id="editaCarro" layoutX="728.0" layoutY="287.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="125.0" styleClass="update-btn" stylesheets="@lib/web/Botoes.css" text="Editar" />
+                                    <Button fx:id="removeCarro" layoutX="14.0" layoutY="285.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="118.0" styleClass="delete-btn" stylesheets="@lib/web/Botoes.css" text="Remover" />
+                                    <Button fx:id="novaViagem" layoutX="375.0" layoutY="287.0" mnemonicParsing="false" onAction="#openNovaReservaScreen" prefHeight="36.0" prefWidth="125.0" styleClass="filter" stylesheets="@lib/web/Botoes.css" text="Nova Reserva" />
+                                 </children>
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
