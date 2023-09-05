@@ -1,112 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<!-- <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?> -->
+
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="novoUsr" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifnmg.smrf.Apresentacao.Desktop.UsuarioController">
    <children>
-      <AnchorPane layoutX="224.0" layoutY="36.0" prefHeight="564.0" prefWidth="875.0" stylesheets="@../../smrf/src/main/resources/br/edu/ifnmg/smrf/Apresentacao/Desktop/lib/web/DesignPadrao.css">
-         <styleClass>
-            <String fx:value="white-bg" />
-            <String fx:value="shadow" />
-         </styleClass>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Button fx:id="cadastraCarro" layoutX="740.0" layoutY="486.0" mnemonicParsing="false" onAction="#novoVeiculo" prefHeight="48.0" prefWidth="116.0" styleClass="update-btn" stylesheets="@../../smrf/src/main/resources/br/edu/ifnmg/smrf/Apresentacao/Desktop/lib/web/Botoes.css" text="Cadastrar" />
-            <Label layoutX="55.0" layoutY="35.0" prefHeight="69.0" prefWidth="629.0" text="NOVO USUÁRIO " textFill="#368981">
-               <font>
-                  <Font name="System Bold" size="48.0" />
-               </font>
-            </Label>
-            <Line endX="584.0" layoutX="239.0" layoutY="104.0" startX="-184.0" stroke="#368981" />
-            <Label layoutX="58.0" layoutY="142.0" text="Nome:" textFill="#368981">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Label>
-            <TextField fx:id="inpNomeUsuario" layoutX="56.0" layoutY="160.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
-            <Button fx:id="cancelaNovoUsr" layoutX="13.0" layoutY="486.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="116.0" styleClass="delete-btn" stylesheets="@../../smrf/src/main/resources/br/edu/ifnmg/smrf/Apresentacao/Desktop/lib/web/Botoes.css" text="Cancelar" />
-            <TextField fx:id="inpSobrenomeUsuario" layoutX="284.0" layoutY="160.0" prefHeight="26.0" prefWidth="344.0" promptText="       " />
-            <Label layoutX="284.0" layoutY="142.0" text="Sobrenome:" textFill="#368981">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Label>
-            <Label layoutX="58.0" layoutY="205.0" text="CPF:" textFill="#368981">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Label>
-            <TextField fx:id="inpCpfCnpjUsuario" layoutX="55.0" layoutY="223.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
-            <TextField fx:id="inpRGUsuario" layoutX="284.0" layoutY="223.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
-            <Label layoutX="284.0" layoutY="205.0" text="Identidade:" textFill="#368981">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Label>
-            <Label layoutX="58.0" layoutY="270.0" text="Data de Nascimento:" textFill="#368981">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Label>
-            <Label layoutX="284.0" layoutY="270.0" text="Endereço:" textFill="#368981">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Label>
-            <TextField fx:id="idUsr" layoutX="55.0" layoutY="421.0" prefHeight="26.0" prefWidth="110.0" promptText="       " />
-            <Label layoutX="53.0" layoutY="395.0" text="Matrícula:" textFill="#368981">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Label>
-            <Label layoutX="284.0" layoutY="329.0" text="Função:" textFill="#368981">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Label>
-            <Label layoutX="58.0" layoutY="329.0" text="Email:" textFill="#368981">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Label>
-            <TextField fx:id="inpContatoUsuario1" layoutX="56.0" layoutY="349.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
-            <DatePicker fx:id="dataDataNascimento" layoutX="56.0" layoutY="288.0" prefHeight="26.0" prefWidth="212.0" />
-            <TextField fx:id="inpContatoUsuario" layoutX="522.0" layoutY="223.0" prefHeight="26.0" prefWidth="168.0" promptText="       " />
-            <Label layoutX="525.0" layoutY="205.0" text="Telefone:" textFill="#368981">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Label>
-            <ComboBox layoutX="283.0" layoutY="349.0" prefWidth="150.0" promptText="     Cargo" />
-            <FontAwesomeIcon glyphName="SEARCH" layoutX="296.0" layoutY="366.0" />
-            <TextField layoutX="284.0" layoutY="289.0" promptText="Rua/Avenida/Travessa" />
-            <TextField layoutX="450.0" layoutY="289.0" prefHeight="26.0" prefWidth="74.0" promptText="Número" />
-            <TextField layoutX="551.0" layoutY="287.0" prefHeight="26.0" prefWidth="194.0" promptText="Bairro" />
-            <TextField layoutX="185.0" layoutY="421.0" />
-            <Label layoutX="185.0" layoutY="395.0" text="Senha:" textFill="#368981">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="contentPane" prefHeight="35.0" prefWidth="200.0">
-         <children>
-            <FontAwesomeIcon glyphName="TRUCK" layoutX="14.0" layoutY="22.0" size="1.5em" />
-            <Label layoutX="42.0" layoutY="6.0" prefHeight="20.0" prefWidth="1054.0" text="Sistema de Monitoramento de Frotas - SMRF">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
+            <BorderPane layoutX="199.0" layoutY="26.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="35.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <!-- <FontAwesomeIcon glyphName="TRUCK" layoutX="14.0" layoutY="22.0" size="1.5em" /> -->
+                        <Label layoutX="42.0" layoutY="6.0" text="Sistema de Monitoramento de Frotas - SMRF">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <fx:include source="template.fxml" />
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="217.0" layoutY="141.0" prefHeight="565.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane accessibleRole="CHECK_BOX" layoutX="14.0" layoutY="14.0" prefHeight="534.0" prefWidth="854.0" stylesheets="@lib/web/DesignPadrao.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="52.0" layoutY="14.0" prefHeight="69.0" prefWidth="629.0" text="NOVO USUÁRIO " textFill="#368981">
+                                       <font>
+                                          <Font name="System Bold" size="48.0" />
+                                       </font>
+                                    </Label>
+                                    <Line endX="584.0" layoutX="236.0" layoutY="83.0" startX="-184.0" stroke="#368981" />
+                                    <Label layoutX="55.0" layoutY="121.0" text="Nome:" textFill="#368981">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="inpNome" layoutX="53.0" layoutY="139.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <Button fx:id="cadastraNovoUsr" layoutX="718.0" layoutY="472.0" mnemonicParsing="false" onAction="#novoUsuario" prefHeight="48.0" prefWidth="116.0" styleClass="update-btn" stylesheets="@lib/web/DesignPadrao.css" text="Cadastrar" />
+                                    <Button fx:id="cancelaNovoUsr" layoutX="11.0" layoutY="472.0" mnemonicParsing="false" onAction="#cancelaCadastro" prefHeight="48.0" prefWidth="116.0" styleClass="delete-btn" stylesheets="@lib/web/Botoes.css" text="Cancelar" />
+                                    <TextField fx:id="inpSobrenome" layoutX="281.0" layoutY="139.0" prefHeight="26.0" prefWidth="344.0" promptText="       " />
+                                    <Label layoutX="281.0" layoutY="121.0" text="Sobrenome:" textFill="#368981">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="55.0" layoutY="184.0" text="CPF:" textFill="#368981">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="inpCpf" layoutX="53.0" layoutY="202.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <TextField fx:id="inpRG" layoutX="281.0" layoutY="202.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <Label layoutX="281.0" layoutY="184.0" text="Identidade (RG):" textFill="#368981">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="52.0" layoutY="314.0" text="Logradouro" textFill="#368981">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="inpLogradouro" layoutX="52.0" layoutY="332.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <Label layoutX="522.0" layoutY="182.0" text="Função:" textFill="#368981">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <!-- <FontAwesomeIcon glyphName="SEARCH" layoutX="511.0" layoutY="346.0" /> -->
+                                    <Label layoutX="55.0" layoutY="247.0" text="Email:" textFill="#368981">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="inpEmail" layoutX="53.0" layoutY="267.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <TextField fx:id="inpTelefone" layoutX="519.0" layoutY="267.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <Label layoutX="522.0" layoutY="247.0" text="Telefone:" textFill="#368981">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="283.0" layoutY="247.0" text="Senha" textFill="#368981">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="282.0" layoutY="314.0" text="Numero" textFill="#368981">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="inpNumero" layoutX="282.0" layoutY="332.0" prefHeight="26.0" prefWidth="105.0" promptText="       " />
+                                    <Label layoutX="52.0" layoutY="376.0" text="Bairro" textFill="#368981">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="inpBairro" layoutX="52.0" layoutY="394.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <Label layoutX="282.0" layoutY="376.0" text="Complemento" textFill="#368981">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="inpComplemento" layoutX="282.0" layoutY="394.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <PasswordField fx:id="inpSenha" layoutX="281.0" layoutY="267.0" prefHeight="26.0" prefWidth="212.0" />
+                                    <ChoiceBox fx:id="inpCargo" cache="true" layoutX="519.0" layoutY="202.0" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="26.0" prefWidth="212.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
          </children>
       </AnchorPane>
    </children>
-</AnchorPane>
+</StackPane>

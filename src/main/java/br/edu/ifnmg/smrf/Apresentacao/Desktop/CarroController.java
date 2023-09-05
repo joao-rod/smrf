@@ -133,7 +133,7 @@ public class CarroController extends Controller {
     }
 
     @FXML
-    public void novoVeiculo(ActionEvent event) {
+    private void novoVeiculo(ActionEvent event) {
         Veiculo veiculo = new Veiculo();
 
         veiculo.setModelo(modelo.getText());
@@ -173,18 +173,12 @@ public class CarroController extends Controller {
 
             Alert alert = new Alert(AlertType.INFORMATION, "Salvo com sucesso!", ButtonType.OK);
             alert.showAndWait();
-
-            if (alert.getResult() == ButtonType.OK) {
-                trocarTela(novoCarro, CarroController.class, "carro.fxml");
-            }
         } catch (Exception e) {
             Alert alert = new Alert(AlertType.ERROR, "Erro ao tentar salvar os dados", ButtonType.OK);
             alert.showAndWait();
-
-            if (alert.getResult() == ButtonType.OK) {
-                trocarTela(novoCarro, CarroController.class, "carro.fxml");
-            }
         }
+
+        trocarTela(novoCarro, CarroController.class, "carro.fxml");
     }
 
 }
