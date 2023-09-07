@@ -1,9 +1,12 @@
 package br.edu.ifnmg.smrf.Apresentacao.Desktop;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.edu.ifnmg.smrf.servicos.AutenticacaoServico;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import lombok.NoArgsConstructor;
 import net.rgielen.fxweaver.core.FxmlView;
@@ -12,9 +15,18 @@ import net.rgielen.fxweaver.core.FxmlView;
 @FxmlView("template.fxml")
 @NoArgsConstructor
 public class TemplateController extends Controller {
-
+    @Autowired
+    AutenticacaoServico atutenticar;
+    
     @FXML
     private VBox menu;
+
+    // public void initialize() {
+    //     username.setText(atutenticar.getUsuario().getNome());
+    // }
+
+    @FXML
+    private Label username;
 
     @FXML
     public void openMainScreen(ActionEvent event) { // Tela principal

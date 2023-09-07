@@ -4,6 +4,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -22,17 +23,6 @@ public class Controller {
         this.contextoSpring = new SpringApplicationBuilder().sources(AplicacaoSpring.class).run(args);
     }
 
-    public void carregarScene(Node parent, Class<?> controller) {
-
-        Stage stage = (Stage) parent.getScene().getWindow();
-        FxWeaver fxWeaver = contextoSpring.getBean(FxWeaver.class);
-        Parent root = (Parent) fxWeaver.loadView(controller);
-        Scene scene = new Scene(root);
-
-        stage.setScene(scene);
-        stage.show();
-    }
-
     public void trocarTela(Node parent, Class<?> controller, String fxmlPath) {
 
         Stage stage = (Stage) parent.getScene().getWindow();
@@ -42,6 +32,17 @@ public class Controller {
 
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void trocarScene(Node parentName, String fxmlPath) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent parent = loader.load();
+
+            parentName.getScene().setRoot(parent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public ConfigurableApplicationContext getContextoSpring() {

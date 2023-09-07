@@ -3,13 +3,14 @@ package br.edu.ifnmg.smrf.entidades;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "enderecos")
@@ -18,6 +19,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
+@ToString
 public class Endereco extends BaseEntity {
 
     @Column
@@ -30,15 +32,9 @@ public class Endereco extends BaseEntity {
     private String bairro;
 
     @Column
-    private String Complemento;
+    private String complemento;
 
-    @ManyToOne(targetEntity = Pessoa.class)
+    @OneToOne
     @JoinColumn(name = "pessoa_id")
     private Pessoa pessoa;
-
-    @Override
-    public String toString() {
-        return "Endereco [logradouro=" + logradouro + ", numero=" + numero + ", bairro=" + bairro + ", Complemento="
-                + Complemento + "]";
-    }
 }

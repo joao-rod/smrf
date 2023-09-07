@@ -1,21 +1,21 @@
 package br.edu.ifnmg.smrf.Apresentacao.Desktop;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.ifnmg.smrf.entidades.Pessoa;
-import br.edu.ifnmg.smrf.entidades.TipoPessoa;
 import br.edu.ifnmg.smrf.servicos.PessoaRepositorio;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.StackPane;
 import net.rgielen.fxweaver.core.FxmlView;
 
@@ -32,43 +32,24 @@ public class UsuarioController extends Controller {
     @FXML
     private StackPane novoUsr;
 
-    // campos usr
+    // campos tabela
     @FXML
-    private TextField inpNome;
+    private TableColumn<Pessoa, String> colActions;
 
     @FXML
-    private TextField inpSobrenome;
+    private TableColumn<Pessoa, LocalDateTime> colData;
 
     @FXML
-    private TextField inpCpf;
+    private TableColumn<Pessoa, String> colEmail;
 
     @FXML
-    private TextField inpRG;
+    private TableColumn<Pessoa, String> colNome;
 
     @FXML
-    private ChoiceBox<TipoPessoa> inpCargo;
+    private TableColumn<Pessoa, String> colTipo;
 
     @FXML
-    private TextField inpEmail;
-
-    @FXML
-    private PasswordField inpSenha;
-
-    @FXML
-    private TextField inpTelefone;
-
-    // campos endereço
-    @FXML
-    private TextField inpLogradouro;
-
-    @FXML
-    private TextField inpNumero;
-
-    @FXML
-    private TextField inpBairro;
-
-    @FXML
-    private TextField inpComplemento;
+    private TableView<Pessoa> tableGerenciaUsr;
 
     // gerencia usr
     @FXML
@@ -80,54 +61,23 @@ public class UsuarioController extends Controller {
     @FXML
     private Button criaUsr;
 
-    // FIX: Corrigir função 
-    @FXML
-    private void configInpCargo() {
-        inpCargo.setItems(FXCollections.observableArrayList(TipoPessoa.values()));
-        inpCargo.setValue(TipoPessoa.Funcionario);
+    public void initialize() {
+        colNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colData.setCellValueFactory(new PropertyValueFactory<>("createdAt"));
+        colTipo.setCellValueFactory(new PropertyValueFactory<>("tipoPessoa"));
+
+        List<Pessoa> usuarios = pessoaRepositorio.Buscar();
+        ObservableList<Pessoa> lista = FXCollections.observableArrayList(usuarios);
+        tableGerenciaUsr.setItems(lista);
     }
 
     @FXML
     private void openNovoUserScreen(ActionEvent event) {
         try {
-            trocarTela(gerenciaUsr, UsuarioController.class, "novoUsr.fxml");
+            trocarTela(gerenciaUsr, NovoUsuarioController.class, "novoUsr.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    @FXML
-    private void cancelaCadastro(ActionEvent event) {
-        try {
-            trocarTela(novoUsr, UsuarioController.class, "gerenciaUsr.fxml");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    private void novoUsuario(ActionEvent event) {
-        Pessoa usuario = new Pessoa();
-        // configInpCargo();
-
-        usuario.setNome(inpNome.getText());
-        // usuario.setSobrenome(inpSobrenome.getText()); // FIX: adicionar no banco
-        usuario.setCpf(inpCpf.getText());
-        usuario.setRg(inpRG.getText());
-        usuario.setTipoPessoa(inpCargo.getValue()); // WARNING: correção de funcionalidade
-
-        // usuario.setSenha(inpSenha.getText());
-
-        try {
-            pessoaRepositorio.Salvar(usuario);
-
-            Alert alert = new Alert(AlertType.INFORMATION, "Salvo com sucesso!", ButtonType.OK);
-            alert.showAndWait();
-        } catch (Exception e) {
-            Alert alert = new Alert(AlertType.ERROR, "Erro ao tentar salvar os dados", ButtonType.OK);
-            alert.showAndWait();
-        }
-
-        trocarTela(novoUsr, UsuarioController.class, "gerenciaUsr.fxml");
     }
 }
