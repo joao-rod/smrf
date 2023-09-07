@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
-
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
@@ -14,7 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="novoUsr" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifnmg.smrf.Apresentacao.Desktop.UsuarioController">
+<StackPane fx:id="novoUsr" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifnmg.smrf.Apresentacao.Desktop.NovoUsuarioController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -40,11 +39,8 @@
                         <AnchorPane layoutX="217.0" layoutY="141.0" prefHeight="565.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane accessibleRole="CHECK_BOX" layoutX="14.0" layoutY="14.0" prefHeight="534.0" prefWidth="854.0" stylesheets="@lib/web/DesignPadrao.css">
-                                 <styleClass>
-                                    <String fx:value="white-bg" />
-                                    <String fx:value="shadow" />
-                                 </styleClass>
                                  <children>
+                                    <ChoiceBox fx:id="inpCargo" cache="true" layoutX="519.0" layoutY="202.0" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="26.0" prefWidth="212.0" style="-fx-background-color: #f8f8f2; -fx-border-color: #d9d9d9; -fx-border-radius: 5px;" />
                                     <Label layoutX="52.0" layoutY="14.0" prefHeight="69.0" prefWidth="629.0" text="NOVO USUÁRIO " textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="48.0" />
@@ -88,7 +84,6 @@
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <FontAwesomeIcon glyphName="SEARCH" layoutX="511.0" layoutY="346.0" />
                                     <Label layoutX="55.0" layoutY="247.0" text="Email:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
@@ -125,8 +120,11 @@
                                     </Label>
                                     <TextField fx:id="inpComplemento" layoutX="282.0" layoutY="394.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
                                     <PasswordField fx:id="inpSenha" layoutX="281.0" layoutY="267.0" prefHeight="26.0" prefWidth="212.0" />
-                                    <ChoiceBox fx:id="inpCargo" cache="true" layoutX="519.0" layoutY="202.0" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="26.0" prefWidth="212.0" />
                                  </children>
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
                               </AnchorPane>
                            </children>
                         </AnchorPane>
