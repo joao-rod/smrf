@@ -8,24 +8,52 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifnmg.smrf.Apresentacao.Desktop.HomepageController">
+<StackPane fx:id="homepage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifnmg.smrf.Apresentacao.Desktop.HomepageController">
    <children>
-      <AnchorPane layoutX="224.0" layoutY="36.0" prefHeight="564.0" prefWidth="875.0" stylesheets="@lib/web/DesignPadrao.css">
-         <styleClass>
-            <String fx:value="white-bg" />
-            <String fx:value="shadow" />
-         </styleClass>
-      </AnchorPane>
-      <Label layoutX="40.0" layoutY="5.0" prefHeight="20.0" prefWidth="1051.0" text="Sistema de Monitoramento de Frotas - SMRF">
-         <font>
-            <Font size="14.0" />
-         </font>
-         
-      </Label>
-      <FontAwesomeIcon glyphName="TRUCK" layoutX="14.0" layoutY="21.0" size="1.5em" />
-   </children>
-   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="199.0" layoutY="26.0" prefHeight="600.0" prefWidth="1100.0" styleClass="label-info" stylesheets="@lib/web/DesignPadrao.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="35.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <FontAwesomeIcon glyphName="TRUCK" layoutX="14.0" layoutY="22.0" size="1.5em" />
+                        <Label layoutX="42.0" layoutY="6.0" text="Sistema de Monitoramento de Frotas - SMRF">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
                   <fx:include source="template.fxml" />
-         </left>
-</AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@lib/web/DesignPadrao.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="264.0" layoutY="67.0" prefHeight="563.2" prefWidth="893.6" stylesheets="@lib/web/DesignPadrao.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="154.0" prefWidth="874.0" stylesheets="@lib/web/DesignPadrao.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="16.0" layoutY="12.0" prefHeight="136.0" prefWidth="254.0" styleClass="card" stylesheets="@lib/web/DesignPadrao.css" />
+                                    <AnchorPane layoutX="613.0" layoutY="15.0" prefHeight="136.0" prefWidth="254.0" styleClass="card" stylesheets="@lib/web/DesignPadrao.css" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

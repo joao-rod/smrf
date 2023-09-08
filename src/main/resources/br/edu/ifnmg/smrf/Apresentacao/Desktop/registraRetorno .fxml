@@ -3,7 +3,6 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -12,13 +11,13 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="novoCarro" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifnmg.smrf.Apresentacao.Desktop.CarroController">
+<AnchorPane fx:id="retorno" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifnmg.smrf.Apresentacao.Desktop.CarroController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
             <BorderPane layoutX="199.0" layoutY="26.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <top>
-                  <AnchorPane fx:id="contentPane" prefHeight="35.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <AnchorPane fx:id="s" prefHeight="35.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
                         <FontAwesomeIcon glyphName="TRUCK" layoutX="14.0" layoutY="22.0" size="1.5em" />
                         <Label layoutX="42.0" layoutY="6.0" text="Sistema de Monitoramento de Frotas - SMRF">
@@ -37,68 +36,82 @@
                      <children>
                         <AnchorPane layoutX="217.0" layoutY="141.0" prefHeight="565.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="534.0" prefWidth="872.0" stylesheets="@lib/web/DesignPadrao.css">
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="534.0" prefWidth="872.0" stylesheets="@../Downloads/dashboardDesign.css">
                                  <styleClass>
                                     <String fx:value="white-bg" />
                                     <String fx:value="shadow" />
                                  </styleClass>
                                  <children>
-                                    <Label layoutX="52.0" layoutY="14.0" prefHeight="69.0" prefWidth="629.0" text="NOVO VEÍCULO" textFill="#368981">
+                                    <Label layoutX="52.0" layoutY="14.0" prefHeight="69.0" prefWidth="629.0" text="REGISTRO DE RETORNO" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="48.0" />
                                        </font>
                                     </Label>
                                     <Line endX="584.0" layoutX="236.0" layoutY="83.0" startX="-184.0" stroke="#368981" />
+                                    <TextField layoutX="504.0" layoutY="139.0" prefHeight="26.0" prefWidth="112.0" promptText="    Motorista" />
+                                    <FontAwesomeIcon glyphName="SEARCH" layoutX="511.0" layoutY="157.0" />
                                     <Label layoutX="55.0" layoutY="121.0" text="Modelo:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="modelo" layoutX="53.0" layoutY="139.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
-                                    <Button fx:id="cadastraCarro" layoutX="731.0" layoutY="472.0" mnemonicParsing="false" onAction="#novoVeiculo" prefHeight="48.0" prefWidth="116.0" styleClass="update-btn" stylesheets="@lib/web/Botoes.css" text="Cadastrar" />
-                                    <Button fx:id="cancelaCarro" onAction="#cancelaNovoCarro" layoutX="11.0" layoutY="472.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="116.0" styleClass="delete-btn" stylesheets="@lib/web/Botoes.css" text="Cancelar" />
-                                    <TextField fx:id="fabricante" layoutX="281.0" layoutY="139.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
-                                    <Label layoutX="281.0" layoutY="121.0" text="Fabricante:" textFill="#368981">
+                                    <TextField layoutX="53.0" layoutY="139.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <Button layoutX="731.0" layoutY="472.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="116.0" styleClass="login-btn" stylesheets="@lib/web/Botoes.css" text="Registrar" />
+                                    <Button layoutX="11.0" layoutY="472.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="116.0" styleClass="delete-btn" stylesheets="@lib/web/Botoes.css" text="Cancelar" onAction="#cancelaRetorno" />
+                                    <TextField layoutX="281.0" layoutY="139.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <Label layoutX="281.0" layoutY="121.0" text="Placa:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="55.0" layoutY="184.0" text="Data de Aquisição:" textFill="#368981">
+                                    <Label layoutX="55.0" layoutY="184.0" text="Destino:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="renavan" layoutX="281.0" layoutY="202.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
-                                    <Label layoutX="281.0" layoutY="184.0" text="Renavan:" textFill="#368981">
+                                    <TextField layoutX="52.0" layoutY="202.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <TextField layoutX="281.0" layoutY="202.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <Label layoutX="281.0" layoutY="184.0" text="Origem:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="versao" layoutX="508.0" layoutY="139.0" prefHeight="26.0" prefWidth="315.0" promptText="       " />
-                                    <Label layoutX="508.0" layoutY="121.0" text="Versão:" textFill="#368981">
+                                    <TextField layoutX="53.0" layoutY="267.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <Label layoutX="55.0" layoutY="249.0" text="Data de Retorno:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="anodefabricacao" layoutX="508.0" layoutY="202.0" prefHeight="26.0" prefWidth="140.0" promptText="       " />
-                                    <Label layoutX="507.0" layoutY="184.0" text="Ano de Fabricação:" textFill="#368981">
+                                    <Label layoutX="281.0" layoutY="249.0" text="Horário:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextArea fx:id="descricao" layoutX="55.0" layoutY="267.0" prefHeight="200.0" prefWidth="548.0" />
-                                    <Label layoutX="55.0" layoutY="249.0" text="Descrição:" textFill="#368981">
+                                    <TextField layoutX="626.0" layoutY="139.0" prefHeight="26.0" prefWidth="243.0" promptText="       " />
+                                    <Label layoutX="511.0" layoutY="121.0" text="Matrícula:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="placa" layoutX="666.0" layoutY="202.0" prefHeight="26.0" prefWidth="137.0" promptText="       " />
-                                    <Label layoutX="666.0" layoutY="184.0" text="Placa:" textFill="#368981">
+                                    <FontAwesomeIcon glyphName="SEARCH" layoutX="63.0" layoutY="157.0" />
+                                    <TextField layoutX="281.0" layoutY="267.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <TextArea layoutX="52.0" layoutY="354.0" prefHeight="86.0" prefWidth="477.0" />
+                                    <Label layoutX="55.0" layoutY="329.0" text=" Observações: :" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <DatePicker fx:id="datadeaquisicao" layoutX="55.0" layoutY="202.0" />
+                                    <Label layoutX="504.0" layoutY="184.0" text="Kilometragem Atual:" textFill="#368981">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField layoutX="504.0" layoutY="202.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <Label layoutX="626.0" layoutY="121.0" text="Nome:" textFill="#368981">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
                                  </children>
                               </AnchorPane>
                            </children>
