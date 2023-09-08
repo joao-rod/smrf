@@ -1,9 +1,7 @@
 package br.edu.ifnmg.smrf.Apresentacao.Desktop;
 
-import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -12,15 +10,10 @@ import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxWeaver;
 
 public class Controller {
-    private ConfigurableApplicationContext contextoSpring;
+    protected ConfigurableApplicationContext contextoSpring;
 
-    private Node ancora;
-
-    @FXML
     public void initialize() {
-        String[] args = new String[0];
-
-        this.contextoSpring = new SpringApplicationBuilder().sources(AplicacaoSpring.class).run(args);
+        contextoSpring = AplicacaoSpring.getContextoSpring();
     }
 
     public void trocarTela(Node parent, Class<?> controller, String fxmlPath) {
@@ -43,17 +36,5 @@ public class Controller {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public ConfigurableApplicationContext getContextoSpring() {
-        return contextoSpring;
-    }
-
-    public Node getAncora() {
-        return ancora;
-    }
-
-    public void setAncora(Node ancora) {
-        this.ancora = ancora;
     }
 }

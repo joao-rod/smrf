@@ -78,6 +78,10 @@ public class CarroController extends Controller {
     @FXML
     private Button novaViagem;
 
+    public void initialize() {
+        contextoSpring = AplicacaoSpring.getContextoSpring();
+    }
+    
     @FXML
     private void openRetornoScreen(ActionEvent event) {
         try {

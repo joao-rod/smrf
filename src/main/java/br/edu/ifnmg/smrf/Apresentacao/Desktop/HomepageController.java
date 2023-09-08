@@ -8,11 +8,14 @@ import net.rgielen.fxweaver.core.FxmlView;
 
 @Service
 @FxmlView("homepage.fxml")
-
 public class HomepageController extends Controller {
 
     @FXML
     private StackPane homepage;
+
+    public void initialize() {
+        contextoSpring = AplicacaoSpring.getContextoSpring();
+    }
 
     public HomepageController() {
         

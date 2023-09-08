@@ -28,6 +28,10 @@ public class TemplateController extends Controller {
     @FXML
     private Label username;
 
+    public void initialize() {
+        contextoSpring = AplicacaoSpring.getContextoSpring();
+    }
+
     @FXML
     public void openMainScreen(ActionEvent event) { // Tela principal
         try {

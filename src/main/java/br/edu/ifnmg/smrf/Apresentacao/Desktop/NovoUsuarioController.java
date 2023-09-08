@@ -21,7 +21,7 @@ import javafx.scene.layout.StackPane;
 import net.rgielen.fxweaver.core.FxmlView;
 
 @Service
-@FxmlView("gerenciaUsr.fxml")
+@FxmlView("novoUsr.fxml")
 public class NovoUsuarioController extends Controller {
     @Autowired
     PessoaRepositorio pessoaRepositorio;
@@ -72,13 +72,15 @@ public class NovoUsuarioController extends Controller {
     private TextField inpComplemento;
 
     public void initialize() {
+        contextoSpring = AplicacaoSpring.getContextoSpring();
+        
         inpCargo.setItems(FXCollections.observableArrayList(TipoPessoa.values()));
     }
 
     @FXML
     private void cancelaCadastro(ActionEvent event) {
         try {
-            trocarScene(novoUsr, "gerenciaUsr.fxml");
+            trocarTela(novoUsr, UsuarioController.class, "gerenciaUsr.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -125,7 +127,7 @@ public class NovoUsuarioController extends Controller {
             Alert alert = new Alert(AlertType.INFORMATION, "Salvo com sucesso!", ButtonType.OK);
             alert.showAndWait();
 
-            trocarScene(novoUsr, "gerenciaUsr.fxml");
+            trocarTela(novoUsr, UsuarioController.class, "gerenciaUsr.fxml");
         } catch (Exception e) {
             Alert alert = new Alert(AlertType.ERROR, "Erro ao tentar salvar os dados", ButtonType.OK);
             alert.showAndWait();

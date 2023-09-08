@@ -62,6 +62,8 @@ public class UsuarioController extends Controller {
     private Button criaUsr;
 
     public void initialize() {
+        contextoSpring = AplicacaoSpring.getContextoSpring();
+        
         colNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         colData.setCellValueFactory(new PropertyValueFactory<>("createdAt"));
