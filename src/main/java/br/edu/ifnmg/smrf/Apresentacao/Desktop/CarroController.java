@@ -72,12 +72,6 @@ public class CarroController extends Controller {
 
     // campos tabela
     @FXML
-    private Button btnNovaViagem;
-
-    @FXML
-    private Button btnRetorno;
-
-    @FXML
     private AnchorPane carro;
 
     @FXML

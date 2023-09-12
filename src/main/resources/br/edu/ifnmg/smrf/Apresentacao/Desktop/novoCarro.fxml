@@ -37,7 +37,7 @@
                      <children>
                         <AnchorPane layoutX="217.0" layoutY="141.0" prefHeight="565.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="534.0" prefWidth="872.0" stylesheets="@lib/web/DesignPadrao.css">
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="534.0" prefWidth="856.0" stylesheets="@lib/web/DesignPadrao.css">
                                  <styleClass>
                                     <String fx:value="white-bg" />
                                     <String fx:value="shadow" />
@@ -56,7 +56,7 @@
                                     </Label>
                                     <TextField fx:id="modelo" layoutX="53.0" layoutY="139.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
                                     <Button fx:id="cadastraCarro" layoutX="731.0" layoutY="472.0" mnemonicParsing="false" onAction="#novoVeiculo" prefHeight="48.0" prefWidth="116.0" styleClass="update-btn" stylesheets="@lib/web/Botoes.css" text="Cadastrar" />
-                                    <Button fx:id="cancelaCarro" onAction="#cancelaNovoCarro" layoutX="11.0" layoutY="472.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="116.0" styleClass="delete-btn" stylesheets="@lib/web/Botoes.css" text="Cancelar" />
+                                    <Button fx:id="cancelaCarro" layoutX="11.0" layoutY="472.0" mnemonicParsing="false" onAction="#cancelaNovoCarro" prefHeight="48.0" prefWidth="116.0" styleClass="delete-btn" stylesheets="@lib/web/Botoes.css" text="Cancelar" />
                                     <TextField fx:id="fabricante" layoutX="281.0" layoutY="139.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
                                     <Label layoutX="281.0" layoutY="121.0" text="Fabricante:" textFill="#368981">
                                        <font>
@@ -86,19 +86,19 @@
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextArea fx:id="descricao" layoutX="55.0" layoutY="267.0" prefHeight="200.0" prefWidth="548.0" />
+                                    <TextArea fx:id="descricao" layoutX="55.0" layoutY="267.0" prefHeight="170.0" prefWidth="548.0" />
                                     <Label layoutX="55.0" layoutY="249.0" text="Descrição:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="placa" layoutX="666.0" layoutY="202.0" prefHeight="26.0" prefWidth="137.0" promptText="       " />
-                                    <Label layoutX="666.0" layoutY="184.0" text="Placa:" textFill="#368981">
+                                    <TextField fx:id="placa" layoutX="686.0" layoutY="202.0" prefHeight="26.0" prefWidth="137.0" promptText="       " />
+                                    <Label layoutX="686.0" layoutY="184.0" text="Placa:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <DatePicker fx:id="datadeaquisicao" layoutX="55.0" layoutY="202.0" />
+                                    <DatePicker fx:id="datadeaquisicao" layoutX="55.0" layoutY="202.0" prefHeight="26.0" prefWidth="212.0" />
                                  </children>
                               </AnchorPane>
                            </children>
