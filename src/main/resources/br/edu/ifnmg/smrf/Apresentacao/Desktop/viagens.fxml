@@ -11,13 +11,13 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="veiculos" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifnmg.smrf.Apresentacao.Desktop.CarroController">
+<AnchorPane fx:id="viagem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifnmg.smrf.Apresentacao.Desktop.ViagemController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
             <BorderPane layoutX="199.0" layoutY="26.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <top>
-                  <AnchorPane fx:id="carro" prefHeight="35.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="35.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
                         <FontAwesomeIcon glyphName="TRUCK" layoutX="14.0" layoutY="22.0" size="1.5em" />
                         <Label layoutX="42.0" layoutY="6.0" text="Sistema de Monitoramento de Frotas - SMRF">
@@ -48,7 +48,7 @@
                                             <columns>
                                               <TableColumn fx:id="colPlaca" prefWidth="180.0" text="Placa" />
                                                 <TableColumn fx:id="colCondutor" prefWidth="279.0" text="Condutor(es)" />
-                                                <TableColumn fx:id="colViagem" prefWidth="231.0" text="Data da Viagem" />
+                                                <TableColumn fx:id="colDataViagem" prefWidth="231.0" text="Data da Viagem" />
                                                 <TableColumn fx:id="colStatus" prefWidth="173.0" text="Status" />
                                             </columns>
                                           </TableView>
@@ -57,12 +57,12 @@
                                           <Button fx:id="btnNovaViagem" alignment="CENTER_RIGHT" layoutX="530.0" layoutY="15.0" mnemonicParsing="false" onAction="#openNovaReservaScreen" prefHeight="36.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to bottom, #21a7ae,#368981);" styleClass="filter" stylesheets="@lib/web/Botoes.css" text="Nova Reserva" />
                                           <FontAwesomeIcon fill="WHITE" glyphName="PLUS" layoutX="544.0" layoutY="38.0" size="1.2em" />
                                           <FontAwesomeIcon fill="WHITE" glyphName="SHARE" layoutX="708.0" layoutY="37.0" />
-                                          <Button fx:id="procuraVeiculos" layoutX="15.0" layoutY="19.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="29.0" />
+                                          <Button fx:id="procuraViagem" layoutX="15.0" layoutY="19.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="29.0" />
                                           <FontAwesomeIcon glyphName="SEARCH" layoutX="23.0" layoutY="37.0" size="1.2em" text="" />
                                        </children>
                                     </AnchorPane>
-                                    <Button fx:id="editaCarro" layoutX="728.0" layoutY="479.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="125.0" styleClass="update-btn" stylesheets="@lib/web/Botoes.css" text="Editar" />
-                                    <Button fx:id="removeCarro" layoutX="14.0" layoutY="477.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="118.0" styleClass="delete-btn" stylesheets="@lib/web/Botoes.css" text="Cancelar" />
+                                    <Button fx:id="editaViagem" layoutX="728.0" layoutY="479.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="125.0" styleClass="update-btn" stylesheets="@lib/web/Botoes.css" text="Editar" />
+                                    <Button fx:id="cancelaViagem" layoutX="14.0" layoutY="477.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="118.0" styleClass="delete-btn" stylesheets="@lib/web/Botoes.css" text="Cancelar" />
                                  </children>
                                  <styleClass>
                                     <String fx:value="white-bg" />

@@ -53,7 +53,7 @@ public class TemplateController extends Controller {
     @FXML
     public void openViagemScreen(ActionEvent event) { // Viagem
         try {
-            trocarTela(menu, CarroController.class, "carro.fxml");
+            trocarTela(menu, ViagemController.class, "viagens.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }

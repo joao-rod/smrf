@@ -34,7 +34,7 @@
             <FontAwesomeIcon glyphName="SIGN_OUT" layoutX="55.0" layoutY="542.0" size="2em" />
             <Button fx:id="adm" layoutX="14.0" layoutY="384.0" mnemonicParsing="false" onAction="#openAdmScreen" prefHeight="44.0" prefWidth="189.0" text="RH" />
             <FontAwesomeIcon fill="#282828" glyphName="USERS" layoutX="57.0" layoutY="412.0" size="1.5em" />
-            <Button fx:id="viagens" layoutX="14.0" layoutY="296.0" mnemonicParsing="false" onAction="#openCarroScreen" prefHeight="44.0" prefWidth="189.0" text="Viagens" />
+            <Button fx:id="viagens" layoutX="14.0" layoutY="296.0" mnemonicParsing="false" onAction="#openViagemScreen" prefHeight="44.0" prefWidth="189.0" text="Viagens" />
             <FontAwesomeIcon fill="#282828" glyphName="BOOK" layoutX="59.0" layoutY="325.0" size="1.5em" />
          </children>
       </AnchorPane>
