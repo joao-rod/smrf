@@ -4,6 +4,7 @@
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -38,88 +39,106 @@
                      <children>
                         <AnchorPane layoutX="217.0" layoutY="141.0" prefHeight="565.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <AnchorPane accessibleRole="CHECK_BOX" layoutX="14.0" layoutY="14.0" prefHeight="534.0" prefWidth="854.0" stylesheets="@lib/web/DesignPadrao.css">
+                              <AnchorPane accessibleRole="CHECK_BOX" layoutX="14.0" layoutY="14.0" prefHeight="546.0" prefWidth="854.0" stylesheets="@lib/web/DesignPadrao.css">
                                  <children>
-                                    <ChoiceBox fx:id="inpCargo" cache="true" layoutX="519.0" layoutY="202.0" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="26.0" prefWidth="212.0" style="-fx-background-color: #f8f8f2; -fx-border-color: #d9d9d9; -fx-border-radius: 5px;" />
+                                    <ChoiceBox fx:id="inpCargo" cache="true" layoutX="519.0" layoutY="178.0" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="26.0" prefWidth="212.0" style="-fx-background-color: #f8f8f2; -fx-border-color: #d9d9d9; -fx-border-radius: 5px;" />
                                     <Label layoutX="52.0" layoutY="14.0" prefHeight="69.0" prefWidth="629.0" text="NOVO USUÁRIO " textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="48.0" />
                                        </font>
                                     </Label>
                                     <Line endX="584.0" layoutX="236.0" layoutY="83.0" startX="-184.0" stroke="#368981" />
-                                    <Label layoutX="55.0" layoutY="121.0" text="Nome:" textFill="#368981">
+                                    <Label layoutX="55.0" layoutY="97.0" text="Nome:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="inpNome" layoutX="53.0" layoutY="139.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
-                                    <Button fx:id="cadastraNovoUsr" layoutX="718.0" layoutY="472.0" mnemonicParsing="false" onAction="#novoUsuario" prefHeight="48.0" prefWidth="116.0" styleClass="update-btn" stylesheets="@lib/web/DesignPadrao.css" text="Cadastrar" />
-                                    <Button fx:id="cancelaNovoUsr" layoutX="11.0" layoutY="472.0" mnemonicParsing="false" onAction="#cancelaCadastro" prefHeight="48.0" prefWidth="116.0" styleClass="delete-btn" stylesheets="@lib/web/Botoes.css" text="Cancelar" />
-                                    <TextField fx:id="inpSobrenome" layoutX="281.0" layoutY="139.0" prefHeight="26.0" prefWidth="344.0" promptText="       " />
-                                    <Label layoutX="281.0" layoutY="121.0" text="Sobrenome:" textFill="#368981">
+                                    <TextField fx:id="inpNome" layoutX="53.0" layoutY="115.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <Button fx:id="cadastraNovoUsr" layoutX="718.0" layoutY="480.0" mnemonicParsing="false" onAction="#novoUsuario" prefHeight="48.0" prefWidth="116.0" styleClass="update-btn" stylesheets="@lib/web/DesignPadrao.css" text="Cadastrar" />
+                                    <Button fx:id="cancelaNovoUsr" layoutX="11.0" layoutY="480.0" mnemonicParsing="false" onAction="#cancelaCadastro" prefHeight="48.0" prefWidth="116.0" styleClass="delete-btn" stylesheets="@lib/web/Botoes.css" text="Cancelar" />
+                                    <TextField fx:id="inpSobrenome" layoutX="281.0" layoutY="115.0" prefHeight="26.0" prefWidth="344.0" promptText="       " />
+                                    <Label layoutX="281.0" layoutY="97.0" text="Sobrenome:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="55.0" layoutY="184.0" text="CPF:" textFill="#368981">
+                                    <Label layoutX="55.0" layoutY="160.0" text="CPF:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="inpCpf" layoutX="53.0" layoutY="202.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
-                                    <TextField fx:id="inpRG" layoutX="281.0" layoutY="202.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
-                                    <Label layoutX="281.0" layoutY="184.0" text="Identidade (RG):" textFill="#368981">
+                                    <TextField fx:id="inpCpf" layoutX="53.0" layoutY="178.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <TextField fx:id="inpRG" layoutX="281.0" layoutY="178.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <Label layoutX="281.0" layoutY="160.0" text="Identidade (RG):" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="52.0" layoutY="314.0" text="Logradouro" textFill="#368981">
+                                    <Label layoutX="52.0" layoutY="290.0" text="Logradouro" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="inpLogradouro" layoutX="52.0" layoutY="332.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
-                                    <Label layoutX="522.0" layoutY="182.0" text="Função:" textFill="#368981">
+                                    <TextField fx:id="inpLogradouro" layoutX="52.0" layoutY="308.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <Label layoutX="522.0" layoutY="158.0" text="Função:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="55.0" layoutY="247.0" text="Email:" textFill="#368981">
+                                    <Label layoutX="55.0" layoutY="223.0" text="Email:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="inpEmail" layoutX="53.0" layoutY="267.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
-                                    <TextField fx:id="inpTelefone" layoutX="519.0" layoutY="267.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
-                                    <Label layoutX="522.0" layoutY="247.0" text="Telefone:" textFill="#368981">
+                                    <TextField fx:id="inpEmail" layoutX="53.0" layoutY="243.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <TextField fx:id="inpTelefone" layoutX="519.0" layoutY="243.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <Label layoutX="522.0" layoutY="223.0" text="Telefone:" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="283.0" layoutY="247.0" text="Senha" textFill="#368981">
+                                    <Label layoutX="283.0" layoutY="223.0" text="Senha" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="282.0" layoutY="314.0" text="Numero" textFill="#368981">
+                                    <Label layoutX="282.0" layoutY="290.0" text="Numero" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="inpNumero" layoutX="282.0" layoutY="332.0" prefHeight="26.0" prefWidth="105.0" promptText="       " />
-                                    <Label layoutX="52.0" layoutY="376.0" text="Bairro" textFill="#368981">
+                                    <TextField fx:id="inpNumero" layoutX="282.0" layoutY="308.0" prefHeight="26.0" prefWidth="105.0" promptText="       " />
+                                    <Label layoutX="52.0" layoutY="352.0" text="Bairro" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="inpBairro" layoutX="52.0" layoutY="394.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
-                                    <Label layoutX="282.0" layoutY="376.0" text="Complemento" textFill="#368981">
+                                    <TextField fx:id="inpBairro" layoutX="52.0" layoutY="370.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <Label layoutX="282.0" layoutY="352.0" text="Complemento" textFill="#368981">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="inpComplemento" layoutX="282.0" layoutY="394.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
-                                    <PasswordField fx:id="inpSenha" layoutX="281.0" layoutY="267.0" prefHeight="26.0" prefWidth="212.0" />
+                                    <TextField fx:id="inpComplemento" layoutX="282.0" layoutY="370.0" prefHeight="26.0" prefWidth="212.0" promptText="       " />
+                                    <PasswordField fx:id="inpSenha" layoutX="281.0" layoutY="243.0" prefHeight="26.0" prefWidth="212.0" />
+                                    <Label fx:id="labelCnhCategoria" layoutX="53.0" layoutY="408.0" text="Categoria da CNH" textFill="#368981" visible="false">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="inpCnhCategoria" layoutX="53.0" layoutY="426.0" prefHeight="26.0" prefWidth="212.0" promptText="       " visible="false" />
+                                    <Label fx:id="labelCnhEmissao" layoutX="283.0" layoutY="408.0" text="Data de emissao" textFill="#368981" visible="false">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="labelCnhValidade" layoutX="519.0" layoutY="408.0" text="Data de vencimento" textFill="#368981" visible="false">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker fx:id="inpCnhEmissao" layoutX="285.0" layoutY="426.0" prefHeight="26.0" prefWidth="212.0" visible="false" />
+                                    <DatePicker fx:id="inpCnhValidade" layoutX="519.0" layoutY="426.0" prefHeight="26.0" prefWidth="212.0" visible="false" />
                                  </children>
                                  <styleClass>
                                     <String fx:value="white-bg" />

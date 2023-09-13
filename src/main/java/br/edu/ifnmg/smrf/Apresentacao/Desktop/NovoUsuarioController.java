@@ -3,9 +3,13 @@ package br.edu.ifnmg.smrf.Apresentacao.Desktop;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.edu.ifnmg.smrf.entidades.Cnh;
+import br.edu.ifnmg.smrf.entidades.Condutor;
 import br.edu.ifnmg.smrf.entidades.Endereco;
 import br.edu.ifnmg.smrf.entidades.Pessoa;
 import br.edu.ifnmg.smrf.entidades.TipoPessoa;
+import br.edu.ifnmg.smrf.servicos.CnhRepositorio;
+import br.edu.ifnmg.smrf.servicos.CondutorRepositorio;
 import br.edu.ifnmg.smrf.servicos.EnderecoRepositorio;
 import br.edu.ifnmg.smrf.servicos.PessoaRepositorio;
 import javafx.collections.FXCollections;
@@ -15,6 +19,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
@@ -28,6 +34,12 @@ public class NovoUsuarioController extends Controller {
 
     @Autowired
     EnderecoRepositorio enderecoRepositorio;
+
+    @Autowired
+    CnhRepositorio cnhRepositorio;
+
+    @Autowired
+    CondutorRepositorio condutorRepositorio;
 
     // parents usr
     @FXML
@@ -71,10 +83,47 @@ public class NovoUsuarioController extends Controller {
     @FXML
     private TextField inpComplemento;
 
+    @FXML
+    private Label labelCnhCategoria;
+
+    @FXML
+    private Label labelCnhEmissao;
+
+    @FXML
+    private Label labelCnhValidade;
+
+    @FXML
+    private TextField inpCnhCategoria;
+
+    @FXML
+    private DatePicker inpCnhEmissao;
+
+    @FXML
+    private DatePicker inpCnhValidade;
+
     public void initialize() {
         contextoSpring = AplicacaoSpring.getContextoSpring();
-        
+
         inpCargo.setItems(FXCollections.observableArrayList(TipoPessoa.values()));
+
+        inpCargo.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> {
+                    if (newValue == TipoPessoa.Motorista) {
+                        labelCnhCategoria.setVisible(true);
+                        labelCnhEmissao.setVisible(true);
+                        labelCnhValidade.setVisible(true);
+                        inpCnhCategoria.setVisible(true);
+                        inpCnhEmissao.setVisible(true);
+                        inpCnhValidade.setVisible(true);
+                    } else {
+                        labelCnhCategoria.setVisible(false);
+                        labelCnhEmissao.setVisible(false);
+                        labelCnhValidade.setVisible(false);
+                        inpCnhCategoria.setVisible(false);
+                        inpCnhEmissao.setVisible(false);
+                        inpCnhValidade.setVisible(false);
+                    }
+                });
     }
 
     @FXML
@@ -99,6 +148,41 @@ public class NovoUsuarioController extends Controller {
             usuario.setSenha(inpSenha.getText());
             usuario.setTelefone(inpTelefone.getText());
             pessoaRepositorio.Salvar(usuario);
+
+            if (inpCnhCategoria.getText() != null && !inpCnhCategoria.getText().isEmpty()) {
+                Cnh cnh = new Cnh();
+                cnh.setCategoria(inpCnhCategoria.getText());
+                cnh.setDataEmissao(inpCnhEmissao.getValue());
+                cnh.setDataValidade(inpCnhValidade.getValue());
+
+                Condutor condutor = new Condutor();
+                try {
+                    usuario = pessoaRepositorio.abrirPorCpf(usuario.getCpf());
+                    condutor.setCondutor(usuario);
+                    condutorRepositorio.Salvar(condutor);
+                } catch (Exception e) {
+                    usuario.setEndereco(null);
+                    e.getStackTrace();
+                }
+
+                try {
+                    condutor = condutorRepositorio.abrirPorUsuario(condutor.getCondutor());
+                    cnh.setCondutor(condutor);
+                    cnhRepositorio.Salvar(cnh);
+                } catch (Exception e) {
+                    cnh.setCondutor(null);
+                    System.out.println("CNH =================== \n\n" + e.getMessage());
+                }
+
+                try {
+                    cnh = cnhRepositorio.abrirPorCondutor(cnh.getCondutor());
+                    condutor.setCnh(cnh);
+                    condutorRepositorio.Salvar(condutor);
+                } catch (Exception e) {
+                    condutor.setCnh(null);
+                    System.out.println("Condutor =================== \n\n" + e.getMessage());
+                }
+            }
 
             Endereco endereco = new Endereco();
             endereco.setLogradouro(inpLogradouro.getText());

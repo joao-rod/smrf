@@ -3,11 +3,15 @@ package br.edu.ifnmg.smrf.infraestrutura;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import br.edu.ifnmg.smrf.entidades.Cnh;
+import br.edu.ifnmg.smrf.entidades.Condutor;
 import br.edu.ifnmg.smrf.servicos.CnhRepositorio;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 
+@Service
 public class CnhDAO extends DAO<Cnh> implements CnhRepositorio {
 
     public CnhDAO() {
@@ -65,6 +69,13 @@ public class CnhDAO extends DAO<Cnh> implements CnhRepositorio {
 
         return consulta.getResultList();
 
+    }
+
+    @Override
+    public Cnh abrirPorCondutor(Condutor condutor) {
+        Query consulta = getManager().createQuery("select c from Cnh c where c.condutor = :c1");
+        consulta.setParameter("c1", condutor);
+        return (Cnh) consulta.getSingleResult();
     }
 
 }

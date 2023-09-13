@@ -1,12 +1,11 @@
 package br.edu.ifnmg.smrf.entidades;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -22,10 +21,10 @@ public class Cnh extends BaseEntity {
     private String categoria;
 
     @Column(name = "data_emissao")
-    private Date dataEmissao;
+    private LocalDate dataEmissao;
 
     @Column(name = "data_validade")
-    private Date dataValidade;
+    private LocalDate dataValidade;
 
     @OneToOne
     private Condutor condutor;
