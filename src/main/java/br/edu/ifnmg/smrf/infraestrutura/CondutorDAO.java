@@ -3,11 +3,14 @@ package br.edu.ifnmg.smrf.infraestrutura;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import br.edu.ifnmg.smrf.entidades.Condutor;
 import br.edu.ifnmg.smrf.servicos.CondutorRepositorio;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 
+@Service
 public class CondutorDAO extends DAO<Condutor> implements CondutorRepositorio {
     public CondutorDAO() {
         super(Condutor.class);
@@ -49,5 +52,11 @@ public class CondutorDAO extends DAO<Condutor> implements CondutorRepositorio {
 
         return consulta.getResultList();
 
+    }
+
+    @Override
+    public List<String> buscarNome() {
+        TypedQuery<String> consulta = getManager().createQuery("select u.nome from Condutor c join c.condutor u", String.class);
+        return consulta.getResultList();
     }
 }

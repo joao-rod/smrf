@@ -53,6 +53,7 @@ public class Viagem extends BaseEntity {
         if (this.condutores.contains(c))
             this.condutores.remove(c);
     }
+
     public List<Veiculo> getVeiculos() {
         return veiculos;
     }
@@ -73,6 +74,7 @@ public class Viagem extends BaseEntity {
         if (this.veiculos.contains(c))
             this.veiculos.remove(c);
     }
+
     public Date getData() {
         return data;
     }

@@ -57,21 +57,18 @@ public class ViagemController extends Controller {
     @FXML
     private Button cancelaViagem;
 
-    @FXML
-    private AnchorPane veiculos;
-
     public void initialize() {
         contextoSpring = AplicacaoSpring.getContextoSpring();
     }
 
     @FXML
-    void openNovaReservaScreen(ActionEvent event) {
-        trocarTela(viagem, ViagemController.class, "reservaCarro.fxml");
+    public void openNovaReservaScreen(ActionEvent event) {
+        trocarTela(viagem, ReservaController.class, "reservaCarro.fxml");
     }
 
     @FXML
-    void openRetornoScreen(ActionEvent event) {
-        trocarTela(viagem, ViagemController.class, "registraRetorno.fxml");
+    public void openRetornoScreen(ActionEvent event) {
+        trocarTela(viagem, ReservaController.class, "registraRetorno.fxml");
     }
 
 }

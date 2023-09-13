@@ -71,4 +71,10 @@ public class VeiculoDAO extends DAO<Veiculo> implements VeiculoRepositorio {
 
     }
 
+    @Override
+    public List<String> buscarPlacas() {
+        TypedQuery<String> consulta = getManager().createQuery("select v.placa from Veiculo v", String.class);
+        return consulta.getResultList();
+    }
+
 }

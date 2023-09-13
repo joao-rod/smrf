@@ -39,12 +39,6 @@ public class CarroController extends Controller {
     @FXML
     private AnchorPane novoCarro;
 
-    @FXML
-    private AnchorPane retorno;
-
-    @FXML
-    private AnchorPane reserva;
-
     // campos novo carro
     @FXML
     private TextField anodefabricacao;
@@ -115,15 +109,6 @@ public class CarroController extends Controller {
     }
     
     @FXML
-    private void openRetornoScreen(ActionEvent event) {
-        try {
-            trocarTela(veiculos, CarroController.class, "registraRetorno.fxml");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
     private void openAddCarroScreen(ActionEvent event) {
         try {
             trocarTela(veiculos, CarroController.class, "novoCarro.fxml");
@@ -133,36 +118,9 @@ public class CarroController extends Controller {
     }
 
     @FXML
-    private void openNovaReservaScreen(ActionEvent event) {
-        try {
-            trocarTela(veiculos, CarroController.class, "reservaCarro.fxml");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
     private void cancelaNovoCarro(ActionEvent event) {
         try {
             trocarTela(novoCarro, CarroController.class, "carro.fxml");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    private void cancelaRetorno(ActionEvent event) {
-        try {
-            trocarTela(retorno, CarroController.class, "carro.fxml");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    private void cancelaReserva(ActionEvent event) {
-        try {
-            trocarTela(reserva, CarroController.class, "carro.fxml");
         } catch (Exception e) {
             e.printStackTrace();
         }
